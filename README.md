@@ -1,24 +1,17 @@
 # MBA6693
 MBA 6693 Data Analytics for Business Decisions.
-COURSE PROPOSAL
 
-MBA 6693
-Data Analytics for Business Decisions
-
-
-
- 
-A.	COURSE DESCRIPTION
+## A.	COURSE DESCRIPTION
 
 This course focuses on developing understanding skills necessary to perform data analytics processes and manage data lifecycle for business decision making. In this course we follow step by step process of data analytics including data extraction, transformation, analyzing and drawing inferences for business decisions. We will use MySQL for data extraction and preprocessing. We will analyze data using Python / R to apply multivariate statistical learning techniques like Clustering, PCA, ARM and Logit models while also familiarising ourselves with version control using Git and the interactive JuPyteR notebooks. We will also deploy visual analytics for advanced algorithms like Random Forest, kNN and SVM using the MS Azure or similar environment. Prior experience in statistics, optimization, databases and possibly some programming are highly desirable. 
 
 Pre-Requisite(s):	MBA 6606, MBA 6607
 
-B.	COURSE OBJECTIVES
+## B.	COURSE OBJECTIVES
 
 Data Analytics is a fast becoming a mainstream in business decision making. The objective of this course is to expose students to challenges and tools required in data acquisition from complex databases, apply relevant methods for drawing insights and convert the output into meaningful reports for decision making. The purpose of data analytics will be to provide better consumer, market and operations insights for enhancing business value and automating business decisions. 
 
-C.	ASSURANCE OF LEARNING
+## C.	ASSURANCE OF LEARNING
 
 Students will learn the data analytics, inferential thinking and problem-solving skills through 
 i.	modeling of various business decision-making situations using advanced methods and
@@ -37,7 +30,7 @@ The learning goals will be realized in several ways. By the end of this course, 
 •	Understand future trends in Data driven decision making.
 •	Prepare for further projects and curriculum centered on machine leaning and artificial intelligence
 
-D.	COURSE MATERIALS
+## D.	COURSE MATERIALS
 	
 [FDS] Elmasri Ramez, Navathe Shamkant Fundamentals of Database Systems 7th Edition
 ISBN: 9780136086208
@@ -61,9 +54,9 @@ Han J., Kamber M. Data Mining: Concepts & Techniques. Morgan Kauffman Series. 20
 Boire R. Data Mining for Managers. Palgrave McMillan. 2014. 9781137406170
 
  
-E.	EVALUATION COMPONENTS AND WEIGHTS
+## E.	EVALUATION COMPONENTS AND WEIGHTS
 
-i.	Components
+### i.	Components
 
 
 List of Components	Group OR Individual	Percent of Total
@@ -77,7 +70,7 @@ Group Project Submission March 31, Tuesday	Group Project	30 %
 			Total of All Components		100 %
 
  
-ii.	Grade Determination
+### ii.	Grade Determination
 Final marks are determined according to the following conversion scale. 
 
 90-100          A+                    		70-79          B+                 	55-59		C+
@@ -85,7 +78,7 @@ Final marks are determined according to the following conversion scale.
 80-84            A-                  		60-64          B-                  	40-49		D
                                                                                    			0-40         	F
 
-F.	COURSE UNDERSTANDINGS
+## F.	COURSE UNDERSTANDINGS
 1. 	All assignments, midterm exam and final exam are closed book.  No formulas will be provided, only tables. However, each student is allowed to bring an 8.5" x 14" sheet, which may contain formulas deemed necessary by the student. This sheet cannot include solved problems. If a formula sheet is examined and found to contain solved problems, this will be treated as cheating.
 
 2. 	Assignment 1 will cover SQL concepts, Assignment 2 will cover distributed database systems, Assignment 3 will cover Regression and PCA whereas Assignment 4 will cover clustering, LDA and logit models. Case and Group projects will be comprehensive covering all the topics taught in the class.  
@@ -103,7 +96,7 @@ Examples of other academic offences include:
 5.      And, more as set out in the academic regulations of the Undergraduate and School of Graduate Studies Calendars. 
 Penalties for plagiarism and other offences range from a minimum of F (zero) in the assignment, exam or test to suspension or expulsion from the University, plus a notation of the academic offence on the student's transcript.
 
-H.	COURSE SCHEDULE
+## H.	COURSE SCHEDULE
 
 Course Content and Topics to be Covered				Book	Chapter		Date
 Week 1.	Database Systems Concepts				FDS		2	Jan 07, 2020
