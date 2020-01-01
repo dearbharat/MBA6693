@@ -114,3 +114,10 @@ Week 11.	Random Forest, Bagging & Boosting|	 ®		ISL|		8	Mar 24, 2020
 Week 12.	SVM (R)				|		ISL	|	9|	Mar 31, 2020
 Week 13.	Individual group schedules 		--|		--	|Apr 07, 2020
 
+Colons can be used to align columns.
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
