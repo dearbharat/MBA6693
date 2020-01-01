@@ -82,7 +82,8 @@ Final marks are determined according to the following conversion scale.
 1. 	All assignments, midterm exam and final exam are closed book.  No formulas will be provided, only tables. However, each student is allowed to bring an 8.5" x 14" sheet, which may contain formulas deemed necessary by the student. This sheet cannot include solved problems. If a formula sheet is examined and found to contain solved problems, this will be treated as cheating.
 
 2. 	Assignment 1 will cover SQL concepts, Assignment 2 will cover distributed database systems, Assignment 3 will cover Regression and PCA whereas Assignment 4 will cover clustering, LDA and logit models. Case and Group projects will be comprehensive covering all the topics taught in the class.  
-G.	ACADEMIC INTEGRITY
+
+## G.	ACADEMIC INTEGRITY
 The University of New Brunswick places a high value on academic integrity and has a policy on plagiarism as well as cheating and other academic offences. Plagiarism includes: 
 1.      Quoting verbatim or almost verbatim from any source, including all electronic sources, without acknowledgement; 
 2.      Adopting someone else's line of thought, argument, arrangement, or supporting evidence without acknowledgment;
@@ -98,18 +99,18 @@ Penalties for plagiarism and other offences range from a minimum of F (zero) in 
 
 ## H.	COURSE SCHEDULE
 
-Course Content and Topics to be Covered				Book	Chapter		Date
-Week 1.	Database Systems Concepts				FDS		2	Jan 07, 2020
-Week 2.	Basic SQL						FDS		4	Jan 14, 2020
-Week 3.	Distributed Databases					FDS		25	Jan 21, 2020
-Week 4.	Overview of Data Warehousing and OLAP		FDS		29	Jan 28, 2020
-Week 5.	Multiple Linear Regression: Extensions (R)		ISL		3	Feb 04, 2020
-Week 6.	Principal Component Analysis			ISL		10	Feb 11, 2020
-Week 7.	Clustering Methods					ISL		10	Feb 18, 2020
-Week 8.	Classification: LDA & Logit (R)			ISL		4	Feb 25, 2020
-Week 9.	Model Selection & Regularization (R) 		ISL		6	Mar 10, 2020
-Week 10.	Tree Based Model					ISL		8	Mar 17, 2020
-Week 11.	Random Forest, Bagging & Boosting	 ®		ISL		8	Mar 24, 2020 
-Week 12.	SVM (R)						ISL		9	Mar 31, 2020
-Week 13.	Individual group schedules shall be given		--		--	Apr 07, 2020
+Course Content and Topics to be Covered		|		Book	| Chapter|		Date
+Week 1.	Database Systems Concepts		|		FDS	|	2|	Jan 07, 2020
+Week 2.	Basic SQL				|		FDS	|	4|	Jan 14, 2020
+Week 3.	Distributed Databases			|		FDS	|	25|	Jan 21, 2020
+Week 4.	Overview of Data Warehousing and OLAP	|	FDS		|29|	Jan 28, 2020
+Week 5.	Multiple Linear Regression: Extensions (R) |		ISL	|	3	Feb 04, 2020
+Week 6.	Principal Component Analysis		|	ISL		|10|	Feb 11, 2020
+Week 7.	Clustering Methods			|		ISL	|	10	|Feb 18, 2020
+Week 8.	Classification: LDA & Logit (R)		|	ISL		|4|	Feb 25, 2020
+Week 9.	Model Selection & Regularization (R) 	|	ISL		|6|	Mar 10, 2020
+Week 10.	Tree Based Model		|			ISL|		8	Mar 17, 2020
+Week 11.	Random Forest, Bagging & Boosting|	 ®		ISL|		8	Mar 24, 2020 
+Week 12.	SVM (R)				|		ISL	|	9|	Mar 31, 2020
+Week 13.	Individual group schedules 		--|		--	|Apr 07, 2020
 
