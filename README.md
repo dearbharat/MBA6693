@@ -99,25 +99,19 @@ Penalties for plagiarism and other offences range from a minimum of F (zero) in 
 
 ## H.	COURSE SCHEDULE
 
-Course Content and Topics to be Covered		|		Book	| Chapter|		Date
-Week 1.	Database Systems Concepts		|		FDS	|	2|	Jan 07, 2020
-Week 2.	Basic SQL				|		FDS	|	4|	Jan 14, 2020
-Week 3.	Distributed Databases			|		FDS	|	25|	Jan 21, 2020
-Week 4.	Overview of Data Warehousing and OLAP	|	FDS		|29|	Jan 28, 2020
-Week 5.	Multiple Linear Regression: Extensions (R) |		ISL	|	3	Feb 04, 2020
-Week 6.	Principal Component Analysis		|	ISL		|10|	Feb 11, 2020
-Week 7.	Clustering Methods			|		ISL	|	10	|Feb 18, 2020
-Week 8.	Classification: LDA & Logit (R)		|	ISL		|4|	Feb 25, 2020
-Week 9.	Model Selection & Regularization (R) 	|	ISL		|6|	Mar 10, 2020
-Week 10.	Tree Based Model		|			ISL|		8	Mar 17, 2020
-Week 11.	Random Forest, Bagging & Boosting|	 ®		ISL|		8	Mar 24, 2020 
-Week 12.	SVM (R)				|		ISL	|	9|	Mar 31, 2020
-Week 13.	Individual group schedules 		--|		--	|Apr 07, 2020
+|Course |Content and Topics to be Covered		|		Book	| Chapter|		Date|
+|---|:---|:---:|---|---:|
+|Week 1.|	Database Systems Concepts		|		FDS	|	2|	Jan 07, 2020|
+|Week 2.|	Basic SQL				|		FDS	|	4|	Jan 14, 2020|
+|Week 3.|	Distributed Databases			|		FDS	|	25|	Jan 21, 2020|
+|Week 4.|	Overview of Data Warehousing and OLAP	|	FDS		|29|	Jan 28, 2020|
+|Week 5.|	Multiple Linear Regression: Extensions (R) |		ISL	|	3	Feb 04, 2020|
+|Week 6.|	Principal Component Analysis		|	ISL		|10|	Feb 11, 2020|
+|Week 7.|	Clustering Methods			|		ISL	|	10	|Feb 18, 2020|
+|Week 8.|	Classification: LDA & Logit (R)		|	ISL		|4|	Feb 25, 2020|
+|Week 9.|	Model Selection & Regularization (R) 	|	ISL		|6|	Mar 10, 2020|
+|Week 10.|	Tree Based Model		|			ISL|		8	|Mar 17, 2020|
+|Week 11.|	Random Forest, Bagging & Boosting|	 ®		ISL|		8	|Mar 24, 2020 |
+|Week 12.|	SVM (R)				|		ISL	|	9|	Mar 31, 2020|
+|Week 13.|	Individual group schedules 	|	--|		--	|Apr 07, 2020|
 
-Colons can be used to align columns.
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
