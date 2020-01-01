@@ -86,10 +86,9 @@ Final marks are determined according to the following conversion scale.
 ## G.	ACADEMIC INTEGRITY
 The University of New Brunswick places a high value on academic integrity and has a policy on plagiarism as well as cheating and other academic offences. Plagiarism includes: 
 
-1.      Quoting verbatim or almost verbatim from any source, including all electronic sources,   
-without acknowledgement;   
+1. Quoting verbatim or almost verbatim from any source, including all electronic sources, without acknowledgement;   
 
-2.      Adopting someone else's line of thought, argument, arrangement, or supporting evidence   without acknowledgment;  
+2. Adopting someone else's line of thought, argument, arrangement, or supporting evidence   without acknowledgment;  
 
 3.      Submitting someone else's work, in whatever form, without acknowledgment;  
 
