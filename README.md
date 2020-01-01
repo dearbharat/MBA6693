@@ -90,22 +90,22 @@ The University of New Brunswick places a high value on academic integrity and ha
 
 2. Adopting someone else's line of thought, argument, arrangement, or supporting evidence   without acknowledgment;  
 
-3.      Submitting someone else's work, in whatever form, without acknowledgment;  
+3. Submitting someone else's work, in whatever form, without acknowledgment;  
 
-4.      Knowingly representing as one's own work any idea of another.    
+4. Knowingly representing as one's own work any idea of another.    
 
 
 Examples of other academic offences include: 
 
-1.      Cheating on exams, tests, assignments or reports;  
+1. Cheating on exams, tests, assignments or reports;  
 
-2.      Impersonating somebody at a test or exam;   
+2. Impersonating somebody at a test or exam;   
 
-3.      Obtaining an exam, test or other course materials through theft, bribery, collusion,   purchase or other improper manner;   
+3. Obtaining an exam, test or other course materials through theft, bribery, collusion,   purchase or other improper manner;   
 
-4.      Submitting coursework that is identical or substantially similar to work that has been   submitted for another course;   
+4. Submitting coursework that is identical or substantially similar to work that has been   submitted for another course;   
 
-5.      And, more as set out in the academic regulations of the Undergraduate and   School of Graduate Studies Calendars.   
+5. And, more as set out in the academic regulations of the Undergraduate and   School of Graduate Studies Calendars.   
 
 
 Penalties for plagiarism and other offences range from a minimum of F (zero) in the assignment,   exam or test to suspension or expulsion from the University, plus a notation of the academic offence   on the student's transcript.  
