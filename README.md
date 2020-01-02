@@ -59,15 +59,16 @@ Boire R. Data Mining for Managers. Palgrave McMillan. 2014. 9781137406170
 ### i.	Components
 
 
-List of Components	Group OR Individual	Percent of Total
-Attendance + Class Submissions	Individual	10 %
-Assignment #1 – January 14, Tuesday	Individual	10 %
-Assignment #2 – January 28, Tuesday	Individual	10 %
-Assignment #3 – February 11, Tuesday	Individual	10 %
-Assignment #4 – February 25, Tuesday	Individual	10 %
-Case Study Submission March 17, Tuesday 	Individual	20 %
-Group Project Submission March 31, Tuesday	Group Project	30 %
-			Total of All Components		100 %
+|Evaluation Components|	Type|	Percent of Total|
+|:---|:---|---:|
+|Attendance + Class Submissions	|Individual	|10 %
+|Assignment #1 – January 14, Tuesday	|Individual	|10 %
+|Assignment #2 – January 28, Tuesday	|Individual	|10 %
+|Assignment #3 – February 11, Tuesday	|Individual	|10 %
+|Assignment #4 – February 25, Tuesday	|Individual	|10 %
+|Case Study Submission March 17, Tuesday 	|Individual	|20 %
+|Group Project Submission March 31, Tuesday	|Group Project	|30 %
+			|Total of All Components		|100 %|
 
  
 ### ii.	Grade Determination
