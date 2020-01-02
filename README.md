@@ -3,7 +3,7 @@ MBA 6693 Data Analytics for Business Decisions.
 
 ## A.	COURSE DESCRIPTION
 
-This course focuses on developing understanding skills necessary to perform data analytics processes and manage data lifecycle for business decision making. In this course we follow step by step process of data analytics including data extraction, transformation, analyzing and drawing inferences for business decisions. We will use MySQL for data extraction and preprocessing. We will analyze data using Python / R to apply multivariate statistical learning techniques like Clustering, PCA, ARM and Logit models while also familiarising ourselves with version control using Git and the interactive JuPyteR notebooks. We will also deploy visual analytics for advanced algorithms like Random Forest, kNN and SVM using the MS Azure or similar environment. Prior experience in statistics, optimization, databases and possibly some programming are highly desirable. 
+This course focuses on developing understanding skills necessary to perform data analytics processes and manage data lifecycle for business decision making. In this course we follow step by step process of data analytics including data extraction, transformation, analyzing and drawing inferences for business decisions. We will use MySQL for data extraction and preprocessing. We will analyze data using R to apply multivariate statistical learning techniques like Clustering, PCA, ARM and Logit models while also familiarising ourselves with version control using Git, interactive JuPyteR notebooks and RStudio Connect. We will also learn advanced algorithms like Random Forest, kNN and SVM using R or similar environment. Prior experience in statistics, optimization, databases and possibly some programming are highly desirable. 
 
 Pre-Requisite(s):	MBA 6606, MBA 6607
 
@@ -119,12 +119,12 @@ Penalties for plagiarism and other offences range from a minimum of F (zero) in 
 |Week 3.|	Distributed Databases			|		FDS	|	25|	Jan 21, 2020|
 |Week 4.|	Overview of Data Warehousing and OLAP	|	FDS		|29|	Jan 28, 2020|
 |Week 5.|	Multiple Linear Regression: Extensions (R) |		ISL	|	3	| Feb 04, 2020|
-|Week 6.|	Principal Component Analysis		|	ISL		|10|	Feb 11, 2020|
-|Week 7.|	Clustering Methods			|		ISL	|	10	|Feb 18, 2020|
+|Week 6.|	Principal Component Analysis (R)	|	ISL		|10|	Feb 11, 2020|
+|Week 7.|	Clustering Methods (R)			|		ISL	|	10	|Feb 18, 2020|
 |Week 8.|	Classification: LDA & Logit (R)		|	ISL		|4|	Feb 25, 2020|
 |Week 9.|	Model Selection & Regularization (R) 	|	ISL		|6|	Mar 10, 2020|
-|Week 10.|	Tree Based Model		|			ISL|		8	|Mar 17, 2020|
-|Week 11.|	Random Forest, Bagging & Boosting|	 ®		ISL|		8	|Mar 24, 2020 |
+|Week 10.|	Tree Based Model		(R)|			ISL|		8	|Mar 17, 2020|
+|Week 11.|	Random Forest, Bagging & Boosting (R)|	 		ISL|		8	|Mar 24, 2020 |
 |Week 12.|	SVM (R)				|		ISL	|	9|	Mar 31, 2020|
 |Week 13.|	Individual group schedules 	|	--|		--	|Apr 07, 2020|
 
