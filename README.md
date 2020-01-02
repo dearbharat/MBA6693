@@ -73,10 +73,10 @@ Group Project Submission March 31, Tuesday	Group Project	30 %
 ### ii.	Grade Determination
 Final marks are determined according to the following conversion scale. 
 
-90-100          A+                    		70-79          B+                 	55-59		C+
-85-89            A                     		65-69          B                   	50-54		C
-80-84            A-                  		60-64          B-                  	40-49		D
-                                                                                   			0-40         	F
+|90-100|          A+|                    		70-79 |         B+|                 	55-59|		C+|
+|85-89           | A                     		|65-69         | B                   	|50-54		|C|
+|80-84            |A-                  		|60-64          |B-                  	|40-49		|D|
+                                                                                   		|||||0-40         	|F|
 
 ## F.	COURSE UNDERSTANDINGS
 1. 	All assignments, midterm exam and final exam are closed book.  No formulas will be provided, only tables. However, each student is allowed to bring an 8.5" x 14" sheet, which may contain formulas deemed necessary by the student. This sheet cannot include solved problems. If a formula sheet is examined and found to contain solved problems, this will be treated as cheating.
