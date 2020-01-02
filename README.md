@@ -66,9 +66,9 @@ Boire R. Data Mining for Managers. Palgrave McMillan. 2014. 9781137406170
 |Assignment #2 – January 28, Tuesday	|Individual	|10 %
 |Assignment #3 – February 11, Tuesday	|Individual	|10 %
 |Assignment #4 – February 25, Tuesday	|Individual	|10 %
-|Case Study Submission March 17, Tuesday 	|Individual	|20 %
-|Group Project Submission March 31, Tuesday	|Group Project	|30 %
-			|Total of All Components| 		|100 %|
+|Case Study Submission March 17, Tuesday 	|Individual	|20 %|
+|Group Project Submission March 31, Tuesday	|Group Project	|30 %|
+|Total of All Components	| 	|100 %|
 
  
 ### ii.	Grade Determination
@@ -76,10 +76,10 @@ Final marks are determined according to the following conversion scale.
 
 |Score|Grade|Score|Grade|Score|Grade|
 |:---|:---|:---|:---|:---|:---|
-|90-100|          A+|                    		70-79 |         B+|                 	55-59|		C+|
-|85-89           | A                     		|65-69         | B                   	|50-54		|C|
-|80-84            |A-                  		|60-64          |B-                  	|40-49		|D|
-| | | | |0-40         	|F|
+|96-100|          A+|                    		81-85 |         B+|                 	66-70|		C+|
+|91-95           | A                     		|76-80         | B                   	|61-65		|C|
+|86-90            |A-                  		|71-75          |B-                  	|56-60		|C-|
+|51-55 |D+ |41-50 |D |0-40         	|F|
 
 ## F.	COURSE UNDERSTANDINGS
 1. 	All assignments, midterm exam and final exam are closed book.  No formulas will be provided, only tables. However, each student is allowed to bring an 8.5" x 14" sheet, which may contain formulas deemed necessary by the student. This sheet cannot include solved problems. If a formula sheet is examined and found to contain solved problems, this will be treated as cheating.
