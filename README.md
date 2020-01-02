@@ -68,7 +68,7 @@ Boire R. Data Mining for Managers. Palgrave McMillan. 2014. 9781137406170
 |Assignment #4 – February 25, Tuesday	|Individual	|10 %
 |Case Study Submission March 17, Tuesday 	|Individual	|20 %
 |Group Project Submission March 31, Tuesday	|Group Project	|30 %
-			|Total of All Components		|100 %|
+			|Total of All Components| 		|100 %|
 
  
 ### ii.	Grade Determination
