@@ -73,6 +73,8 @@ Group Project Submission March 31, Tuesday	Group Project	30 %
 ### ii.	Grade Determination
 Final marks are determined according to the following conversion scale. 
 
+|Score|Grade|Score|Grade|Score|Grade|
+|:---|---:|:---|---:|:---|---:|
 |90-100|          A+|                    		70-79 |         B+|                 	55-59|		C+|
 |85-89           | A                     		|65-69         | B                   	|50-54		|C|
 |80-84            |A-                  		|60-64          |B-                  	|40-49		|D|
