@@ -25,6 +25,7 @@ ii.	applying data analytics tools and techniques in to answer complex and challe
 The course also focuses on critical thinking by applying concepts, principles, methods and tools to collect, store, preprocess, model, analyze and visualize data for business decision making. Students will be exposed to collaborative modeling, implementation and analytics workflows in variety of business situations.
 
 The learning goals will be realized in several ways. By the end of this course, students will:
+<<<<<<< HEAD
 
 •	Understand importance of Data Analytics in emerging business scenarios.
 
@@ -45,6 +46,17 @@ The learning goals will be realized in several ways. By the end of this course, 
 •	Prepare for further projects and curriculum centered on machine leaning and artificial intelligence
 \pagebreak
 
+=======
+•	Understand importance of Data Analytics in emerging business scenarios.
+•	Develop know-how of data pre-processing for data analytics.
+•	Translate Business Objectives in mathematical model and apply required techniques.
+•	Evaluate and select appropriate tools for solving varied business problems.
+•	Identify problems and commission solutions using modern tools and techniques.
+•	Design & build a robust a comprehensive data driven decision systems.
+•	Strategize competitive advantage for organizations using data analytics approaches to emerging new age business problems.
+•	Understand future trends in Data driven decision making.
+•	Prepare for further projects and curriculum centered on machine leaning and artificial intelligence
+>>>>>>> 50cbefddd2b73d6802791c6bb9cd75da7589b883
 
 ## D.	COURSE MATERIALS
 	
@@ -69,8 +81,12 @@ Han J., Kamber M. Data Mining: Concepts & Techniques. Morgan Kauffman Series. 20
 
 Boire R. Data Mining for Managers. Palgrave McMillan. 2014. 9781137406170
 
+<<<<<<< HEAD
 
 
+=======
+ 
+>>>>>>> 50cbefddd2b73d6802791c6bb9cd75da7589b883
 ## E.	EVALUATION COMPONENTS AND WEIGHTS
 
 ### i.	Components
