@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Week 2 Introduction to R | MBA 6693 Data Analytics for Business Decisions</title>
+  <meta name="description" content="This book contains all the material and associated instructions for the course MBA 6693 Data Analytics for Business Decisions taught at University of New Brunswick." />
+  <meta name="generator" content="bookdown 0.16.5 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Week 2 Introduction to R | MBA 6693 Data Analytics for Business Decisions" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book contains all the material and associated instructions for the course MBA 6693 Data Analytics for Business Decisions taught at University of New Brunswick." />
+  <meta name="github-repo" content="dearbharat/UNBMBA6693" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Week 2 Introduction to R | MBA 6693 Data Analytics for Business Decisions" />
+  
+  <meta name="twitter:description" content="This book contains all the material and associated instructions for the course MBA 6693 Data Analytics for Business Decisions taught at University of New Brunswick." />
+  
+
+<meta name="author" content="Bharat Bhushan Verma" />
+
+
+<meta name="date" content="2020-01-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="getting-started.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MBA 6693 Data Analytics for Business Decisions</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prerequisites"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#weekly-meeting-schedule"><i class="fa fa-check"></i>Weekly Meeting Schedule</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-objectives"><i class="fa fa-check"></i>Course Objectives</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-tools"><i class="fa fa-check"></i>Course Tools</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#preclass-checklist"><i class="fa fa-check"></i>Preclass checklist</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-material"><i class="fa fa-check"></i>Course Material</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#required-material"><i class="fa fa-check"></i>Required Material</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#reference-material"><i class="fa fa-check"></i>Reference Material</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#additional-optional-readings"><i class="fa fa-check"></i>Additional Optional Readings</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#schedule"><i class="fa fa-check"></i>Schedule</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#evaluation-components"><i class="fa fa-check"></i>Evaluation Components</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#grade-determination"><i class="fa fa-check"></i>Grade Determination</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-guidelines"><i class="fa fa-check"></i>Course Guidelines</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#academic-integrity"><i class="fa fa-check"></i>Academic Integrity</a></li>
+<li><a href="index.html#bharat-bhushan-verma-instructor"><span>Bharat Bhushan Verma</span> Instructor</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>1</b> Getting Started</a><ul>
+<li class="chapter" data-level="1.1" data-path="getting-started.html"><a href="getting-started.html#media"><i class="fa fa-check"></i><b>1.1</b> Media</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="getting-started.html"><a href="getting-started.html#why-piazza"><i class="fa fa-check"></i><b>1.1.1</b> Why Piazza?</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="getting-started.html"><a href="getting-started.html#datacamp-exercises"><i class="fa fa-check"></i><b>1.2</b> DataCamp Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i><b>2</b> Introduction to R</a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#media-1"><i class="fa fa-check"></i><b>2.1</b> Media</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#lists"><i class="fa fa-check"></i><b>2.2</b> Lists</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#data-frames"><i class="fa fa-check"></i><b>2.2.1</b> Data Frames</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#factors"><i class="fa fa-check"></i><b>2.3</b> Factors</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction-to-r.html"><a href="introduction-to-r.html#tibbles"><i class="fa fa-check"></i><b>2.4</b> Tibbles</a></li>
+<li class="chapter" data-level="2.5" data-path="introduction-to-r.html"><a href="introduction-to-r.html#packages"><i class="fa fa-check"></i><b>2.5</b> Packages</a></li>
+<li class="chapter" data-level="2.6" data-path="introduction-to-r.html"><a href="introduction-to-r.html#datacamp-exercises-1"><i class="fa fa-check"></i><b>2.6</b> DataCamp Exercises</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://www.linkedin.com/in/dearbharat/" target="blank">Published with Bharat Bhushan Verma</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MBA 6693 Data Analytics for Business Decisions</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction-to-r" class="section level1">
+<h1><span class="header-section-number">Week 2</span> Introduction to R</h1>
+<p><i>This unit spans <b>Mon, Jan 13, 2020 </b>through <b>Sat, Jan 18, 2020</b>.</i><br />
+<b>At 11:59 PM on Sat, Jan 18, 2020 the following items are due:</b></p>
+<ul>
+<li>Joining Data in SQL or Database Design</li>
+</ul>
+<p>Unit 2 presents a somewhat less of a workload than unit 1. It is a chance for you to breathe, assimilate what you have already learned and review whatever you think needs additional focus. We will start building up the pace again through unit 5. At that point, things should start to smooth out a bit. We’ll have covered enough R to take in a data set, clean it, and present it visually.</p>
+<div id="media-1" class="section level2">
+<h2><span class="header-section-number">2.1</span> Media</h2>
+<ul>
+<li>Reading: <a href="https://cran.r-project.org/doc/FAQ/R-FAQ.html#What-is-CRAN_003f">R-FAQ 2.10 - What is CRAN?</a></li>
+<li>Reading: <a href="https://www.datacamp.com/community/tutorials/r-packages-guide">R Packages: A Beginner’s Guide</a></li>
+<li>Video: <a href="https://youtu.be/f3E4NSYNC5g">Matrices, Lists, and Data Frames (6:02)</a></li>
+<li>Video: <a href="https://youtu.be/EL4zTVS3Huw">Tibbles, Packages (3:35)</a></li>
+</ul>
+</div>
+<div id="lists" class="section level2">
+<h2><span class="header-section-number">2.2</span> Lists</h2>
+<p>A <em>list</em> is a generic vector that doesn’t need to contain the same primitive data types. This makes referencing members a little more complex. We use the <code>list</code> function to create lists. Like matrices, we won’t be using lists much in this class so I’ll provide just a brief introduction.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">num &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">names &lt;-<span class="st">  </span><span class="kw">c</span>(<span class="st">&quot;Fred&quot;</span>, <span class="st">&quot;Ethel&quot;</span>)</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">status &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">l &lt;-<span class="st"> </span><span class="kw">list</span>(num, names, status, <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">l[<span class="dv">2</span>]</a></code></pre></div>
+<pre><code>## [[1]]
+## [1] &quot;Fred&quot;  &quot;Ethel&quot;</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">l[[<span class="dv">2</span>]][<span class="dv">2</span>]</a></code></pre></div>
+<pre><code>## [1] &quot;Ethel&quot;</code></pre>
+<p>Lists can get pretty tricky but notice if we use a single bracket, the object returned is another list so <code>l[2]</code> returns a list of one which contains a character vector with two elements. Using the double-bracket returns the actual element so <code>l[[2]]</code> returns a character vector of two elements. This is why when we type <code>l[[2]][2]</code> we are saying return the second element of the character vector (i.e., Ethel) whereas if we typed <code>l[2][2]</code> we would get an out of bounds because the list returned with <code>l[2]</code> contains only one element. <code>l[2][[1]][2]</code> would return a list of one, then take the first item in that list (a character vector) and return the second item in that vector – which would be identical to typing <code>l[[2]][2]</code>. While we won’t be working much with lists directly this semester, it is helpful to go back and review them at a later date because we will be using a specialized form of a list throughout the semester, namely – the <em>data frame</em>.</p>
+<div id="data-frames" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Data Frames</h3>
+<p>Data frames are lists that we can metaphorically think of as spreadsheets with some restrictions:</p>
+<ul>
+<li>variable names (i.e., column names) must be unique within the data frame</li>
+<li>all elements (columns) in the data frame are vectors.</li>
+<li>all elements (columns) in the data frame have equal length.</li>
+</ul>
+<p>So when your data is in a format where columns represent variables, and rows typically represent an observation, data frames are the object that you most likely want to use to represent this data. Most forms of structured data fit nicely into a data frame.</p>
+<p>We use the <code>data.frame</code> function to create a data frame.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">rooms &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Living Room&quot;</span>, <span class="st">&quot;dining room&quot;</span>, <span class="st">&quot;kitchen&quot;</span>)</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">colors &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Navaho White&quot;</span>, <span class="st">&quot;Stonington Gray&quot;</span>, <span class="st">&quot;Edgecomb Gray&quot;</span>)</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">comments &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Patch ceiling hole - Bob&quot;</span>, <span class="st">&quot;Use a tinted primer - Joe&quot;</span>,</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">             <span class="st">&quot;Look&#39;s pretty good - Ann&quot;</span>)</a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">price &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">245.30</span>, <span class="dv">300</span>, <span class="fl">180.25</span>)</a>
+<a class="sourceLine" id="cb5-6" data-line-number="6">house &lt;-<span class="st"> </span><span class="kw">data.frame</span>(rooms, colors, comments, price, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<p>We created a data frame from the vectors we worked with earlier. They are all equal length and have the same data within the vectors. We can also view the data by clicking on the table icon next to the <code>house</code> variable in the environment pane and see the table as shown below.</p>
+<div class="figure">
+<img src="./img/df_enviro.png" alt="dataframe" />
+<p class="caption">dataframe</p>
+</div>
+<p>Each column can be referenced by the convention <code>variable_name$column_name</code>, for example, <code>house$price</code> will return the price column as a numeric vector. I can also interact with it as we did with <code>mtcars</code> in the last lesson. I can reference rows and columns in a few different ways.</p>
+<ul>
+<li>by index - e.g., <code>house[1,2]</code> will return the first row, second column of the data frame</li>
+<li>by name - e.g., <code>house[1, &quot;colors&quot;]</code> will return the first row of the <code>colors</code> column</li>
+<li>by name - e.g., <code>house$colors</code> will return the <code>colors</code> column <strong>as a character vector</strong> as will <code>house[,&quot;colors&quot;]</code></li>
+<li>by list index - e.g., <code>house[2]</code> will return the second column <strong>as a data.frame object</strong> as will <code>house[&quot;colors&quot;]</code></li>
+<li>by list index - e.g., <code>house[[2]]</code> will return the second column <strong>as a character vector</strong> as will <code>house[,2]</code></li>
+</ul>
+<p>You can also select multiple rows and columns by using combine and/or ranges (e.g., <code>house[1:2, c(&quot;rooms&quot;, &quot;colors&quot;)]</code>)</p>
+<p>Finally, you can search for specific values in a data frame as shown below.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">house[rooms <span class="op">==</span><span class="st"> &quot;Living Room&quot;</span>,]</a></code></pre></div>
+<pre><code>##         rooms       colors                 comments price
+## 1 Living Room Navaho White Patch ceiling hole - Bob 245.3</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">house[price <span class="op">&gt;</span><span class="st"> </span><span class="dv">200</span>,]</a></code></pre></div>
+<pre><code>##         rooms          colors                  comments price
+## 1 Living Room    Navaho White  Patch ceiling hole - Bob 245.3
+## 2 dining room Stonington Gray Use a tinted primer - Joe 300.0</code></pre>
+<p>Once again, you can see that there are many different ways to accomplish the same task in R. Everything that we’ve done so far has been using the base packages in R (i.e., the stuff installed by default). In the next unit, we’ll show how to search within a data frame using additional packages that aren’t installed by default. We’ll also explain packages, the concept of tidy data, and go into more depth with data frames.</p>
+</div>
+</div>
+<div id="factors" class="section level2">
+<h2><span class="header-section-number">2.3</span> Factors</h2>
+<p>When you first took statistics, you learned about different types or classification of variables. One reason why variable types become essential is that they determine the kind of analysis that can be performed. Generally speaking, we can classify data as being <em>numeric</em> (e.g., height, weight, salary), <em>categorical</em> (e.g., gender, color, hometown), or <em>ordinal</em>. Right now, we are not concerned with the numeric data.</p>
+<p>Let’s start off by creating some data of houses we might have looked at when thinking about purchasing a property</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">description &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;blue cape near university&quot;</span>, <span class="st">&quot;small bungalo near ocean&quot;</span>, </a>
+<a class="sourceLine" id="cb10-2" data-line-number="2">                <span class="st">&quot;weird oval shaped home&quot;</span>, <span class="st">&quot;shag carpet place that smells like beer&quot;</span>,</a>
+<a class="sourceLine" id="cb10-3" data-line-number="3">                <span class="st">&quot;block shaped home on busy street&quot;</span>)</a>
+<a class="sourceLine" id="cb10-4" data-line-number="4">price &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">250000</span>, <span class="dv">400000</span>, <span class="dv">185000</span>, <span class="dv">172000</span>, <span class="dv">180000</span>)</a>
+<a class="sourceLine" id="cb10-5" data-line-number="5">color &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;green&quot;</span>)</a>
+<a class="sourceLine" id="cb10-6" data-line-number="6">initial_impressions &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;love&quot;</span>, <span class="st">&quot;love&quot;</span>, <span class="st">&quot;hate&quot;</span>, <span class="st">&quot;neutral&quot;</span>, <span class="st">&quot;hate&quot;</span>)</a>
+<a class="sourceLine" id="cb10-7" data-line-number="7">houses &lt;-<span class="st"> </span><span class="kw">data.frame</span>(description, price, color, initial_impressions, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb10-8" data-line-number="8"><span class="kw">summary</span>(houses)</a></code></pre></div>
+<pre><code>##  description            price           color           initial_impressions
+##  Length:5           Min.   :172000   Length:5           Length:5           
+##  Class :character   1st Qu.:180000   Class :character   Class :character   
+##  Mode  :character   Median :185000   Mode  :character   Mode  :character   
+##                     Mean   :237400                                         
+##                     3rd Qu.:250000                                         
+##                     Max.   :400000</code></pre>
+<p>Looking at a summary of the <code>houses</code> data, I see some detailed statistics regarding price but the other summary information is relatively meaningless. Let’s make a minor modification to our data frame.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">houses<span class="op">$</span>color &lt;-<span class="st"> </span><span class="kw">factor</span>(houses<span class="op">$</span>color)</a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="kw">summary</span>(houses)</a></code></pre></div>
+<pre><code>##  description            price           color   initial_impressions
+##  Length:5           Min.   :172000   blue  :2   Length:5           
+##  Class :character   1st Qu.:180000   green :1   Class :character   
+##  Mode  :character   Median :185000   yellow:2   Mode  :character   
+##                     Mean   :237400                                 
+##                     3rd Qu.:250000                                 
+##                     Max.   :400000</code></pre>
+<p>Notice that the summary for <code>color</code> now includes a count of the different colors. This is because we instructed R to make <code>color</code> a <em>factor</em>. Also notice when I created the data frame, I used the parameter <code>stringsAsFactors = FALSE</code> to tell R not to create factor variables from character data, which is the default behavior.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="kw">str</span>(houses)</a></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    5 obs. of  4 variables:
+##  $ description        : chr  &quot;blue cape near university&quot; &quot;small bungalo near ocean&quot; &quot;weird oval shaped home&quot; &quot;shag carpet place that smells like beer&quot; ...
+##  $ price              : num  250000 400000 185000 172000 180000
+##  $ color              : Factor w/ 3 levels &quot;blue&quot;,&quot;green&quot;,..: 1 1 3 3 2
+##  $ initial_impressions: chr  &quot;love&quot; &quot;love&quot; &quot;hate&quot; &quot;neutral&quot; ...</code></pre>
+<p>Looking at the structure of <code>color</code> we can see that it is now defined as a factor with three levels (blue, green, and yellow). Internally, factors get stored as integers, but we now need to be careful when we treat them as strings. By default, a factor has <code>levels</code> that are in alphabetical order that corresponds to the integer values. In this case:</p>
+<ul>
+<li>1 = blue</li>
+<li>2 = green</li>
+<li>3 = yellow</li>
+</ul>
+<p>Now we can go back and follow the same process to make <code>initial_impressions</code> a factor.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">houses<span class="op">$</span>initial_impressions &lt;-<span class="st"> </span><span class="kw">factor</span>(houses<span class="op">$</span>initial_impressions)</a>
+<a class="sourceLine" id="cb16-2" data-line-number="2"><span class="kw">summary</span>(houses)</a></code></pre></div>
+<pre><code>##  description            price           color   initial_impressions
+##  Length:5           Min.   :172000   blue  :2   hate   :2          
+##  Class :character   1st Qu.:180000   green :1   love   :2          
+##  Mode  :character   Median :185000   yellow:2   neutral:1          
+##                     Mean   :237400                                 
+##                     3rd Qu.:250000                                 
+##                     Max.   :400000</code></pre>
+<p>You’ll notice that the levels of <code>initial_impressions</code>, like <code>color</code> are also in alphabetical order. In reality, hate &lt; neutral &lt; love, which suggests that this might be an ordinal variable and not a categorical variable. If we want to have a worst-to-first type of order, we can specify this when creating the factor by setting the parameters <code>levels</code> and <code>ordered</code>.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">houses<span class="op">$</span>initial_impressions &lt;-<span class="st"> </span><span class="kw">factor</span>(houses<span class="op">$</span>initial_impressions, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;hate&quot;</span>, <span class="st">&quot;neutral&quot;</span>, <span class="st">&quot;love&quot;</span>), <span class="dt">ordered =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb18-2" data-line-number="2"><span class="kw">summary</span>(houses)</a></code></pre></div>
+<pre><code>##  description            price           color   initial_impressions
+##  Length:5           Min.   :172000   blue  :2   hate   :2          
+##  Class :character   1st Qu.:180000   green :1   neutral:1          
+##  Mode  :character   Median :185000   yellow:2   love   :2          
+##                     Mean   :237400                                 
+##                     3rd Qu.:250000                                 
+##                     Max.   :400000</code></pre>
+<p>We have told R to make <code>initial_impressions</code> an <em>ordered factor</em>.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw">str</span>(houses)</a></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    5 obs. of  4 variables:
+##  $ description        : chr  &quot;blue cape near university&quot; &quot;small bungalo near ocean&quot; &quot;weird oval shaped home&quot; &quot;shag carpet place that smells like beer&quot; ...
+##  $ price              : num  250000 400000 185000 172000 180000
+##  $ color              : Factor w/ 3 levels &quot;blue&quot;,&quot;green&quot;,..: 1 1 3 3 2
+##  $ initial_impressions: Ord.factor w/ 3 levels &quot;hate&quot;&lt;&quot;neutral&quot;&lt;..: 3 3 1 2 1</code></pre>
+<p>If you have to clean and transform your data, it is often advisable not to use factors until right before you analyze data. This will become more apparent later in the semester. We’ll also show you a different way to order factors using the <code>forcats</code> package in a few units.</p>
+</div>
+<div id="tibbles" class="section level2">
+<h2><span class="header-section-number">2.4</span> Tibbles</h2>
+<p>Finally, I want to briefly introduce you to an updated version of the data frame – the <code>tibble</code>. It isn’t going to make much sense yet, but tibbles make data frames slightly less frustrating to work with. For a full explanation, see the <a href="https://cran.r-project.org/web/packages/tibble/vignettes/tibble.html">package definition</a>, but it will become more evident after you have had more exposure to R. One thing you might notice is that they print a little more nicely. We won’t be interacting with tibbles too much, but they will pop up again during the semester.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1">houses</a></code></pre></div>
+<pre><code>##                               description  price  color initial_impressions
+## 1               blue cape near university 250000   blue                love
+## 2                small bungalo near ocean 400000   blue                love
+## 3                  weird oval shaped home 185000 yellow                hate
+## 4 shag carpet place that smells like beer 172000 yellow             neutral
+## 5        block shaped home on busy street 180000  green                hate</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">houses &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(houses)</a>
+<a class="sourceLine" id="cb24-2" data-line-number="2">houses</a></code></pre></div>
+<pre><code>## # A tibble: 5 x 4
+##   description                              price color  initial_impressions
+##   &lt;chr&gt;                                    &lt;dbl&gt; &lt;fct&gt;  &lt;ord&gt;              
+## 1 blue cape near university               250000 blue   love               
+## 2 small bungalo near ocean                400000 blue   love               
+## 3 weird oval shaped home                  185000 yellow hate               
+## 4 shag carpet place that smells like beer 172000 yellow neutral            
+## 5 block shaped home on busy street        180000 green  hate</code></pre>
+</div>
+<div id="packages" class="section level2">
+<h2><span class="header-section-number">2.5</span> Packages</h2>
+<p>Packages are a collection of functions and data sets that are typically not a part of base R (i.e., they are developed by the community). While functions like <code>mean</code>, <code>median</code>, <code>max</code>, etc. are part of base R, the <code>as_tibble</code> function we just used is part of the <code>tibble</code> package which is loaded with dplyr.</p>
+<p>To install a package, we can use the <code>install.packages()</code> command or we can select Tools –&gt; Install Packages in RStudio. By default, the available packages listed are from the <a href="https://cran.r-project.org/web/packages/">CRAN repository</a>, but we can also install packages from Bioconductor or Github.</p>
+<p>After a package is installed, if we want to use the functions or data sets that come with the package, we must load it using the <code>library</code> function as we have already done with <code>dplyr</code> and <code>knitr</code>.</p>
+<p>Some R packages have overviews of the package, called a “vignette”. You can see what vignettes are available for packages that you have <strong>loaded</strong> using the <code>browseVignettes</code> function. This will launch a browser tab with links to the vignettes. You can also find out what packages and versions you have loaded, along with other useful information, by using the <code>sessionInfo</code> function as shown below. There will probably be more loaded than you expect as many packages have dependencies (i.e., they load other packages). We’ll probably be using <code>sessionInfo</code> to diagnose some problems students might have during the semester.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="kw">sessionInfo</span>()</a></code></pre></div>
+<pre><code>## R version 3.6.2 (2019-12-12)
+## Platform: x86_64-apple-darwin15.6.0 (64-bit)
+## Running under: macOS Catalina 10.15.2
+## 
+## Matrix products: default
+## BLAS:   /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRblas.0.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib
+## 
+## locale:
+## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+## [1] dplyr_0.8.3 knitr_1.26 
+## 
+## loaded via a namespace (and not attached):
+##  [1] Rcpp_1.0.3       rstudioapi_0.10  magrittr_1.5     tidyselect_0.2.5
+##  [5] R6_2.4.1         rlang_0.4.2      fansi_0.4.0      stringr_1.4.0   
+##  [9] highr_0.8        tools_3.6.2      xfun_0.11        utf8_1.1.4      
+## [13] cli_2.0.0        htmltools_0.4.0  yaml_2.2.0       digest_0.6.23   
+## [17] assertthat_0.2.1 tibble_2.1.3     crayon_1.3.4     bookdown_0.16.5 
+## [21] purrr_0.3.3      vctrs_0.2.1      zeallot_0.1.0    glue_1.3.1      
+## [25] evaluate_0.14    rmarkdown_2.0    stringi_1.4.3    compiler_3.6.2  
+## [29] pillar_1.4.3     backports_1.1.5  pkgconfig_2.0.3</code></pre>
+<p>Most of the packages we will use in this course are part of the <a href="https://blog.rstudio.com/2016/09/15/tidyverse-1-0-0/">tidyverse</a>, which we will introduce in the next unit.</p>
+</div>
+<div id="datacamp-exercises-1" class="section level2">
+<h2><span class="header-section-number">2.6</span> DataCamp Exercises</h2>
+<p>This unit’s DataCamp exercises have you finishing their Introduction to R course, which gives you the prerequisite knowledge required for many of their other courses.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="getting-started.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["UNBMBA6693.pdf", "UNBMBA6693.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
