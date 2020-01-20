@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Week 3 SQL to R | MBA 6693 Data Analytics for Business Decisions</title>
+  <meta name="description" content="This book contains all the material and associated instructions for the course MBA 6693 Data Analytics for Business Decisions taught at University of New Brunswick." />
+  <meta name="generator" content="bookdown 0.16.5 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Week 3 SQL to R | MBA 6693 Data Analytics for Business Decisions" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book contains all the material and associated instructions for the course MBA 6693 Data Analytics for Business Decisions taught at University of New Brunswick." />
+  <meta name="github-repo" content="dearbharat/UNBMBA6693" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Week 3 SQL to R | MBA 6693 Data Analytics for Business Decisions" />
+  
+  <meta name="twitter:description" content="This book contains all the material and associated instructions for the course MBA 6693 Data Analytics for Business Decisions taught at University of New Brunswick." />
+  
+
+<meta name="author" content="Bharat Bhushan Verma" />
+
+
+<meta name="date" content="2020-01-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="more-sql.html"/>
+<link rel="next" href="exploratory-data-analysis.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MBA 6693 Data Analytics for Business Decisions</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prerequisites"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#weekly-meeting-schedule"><i class="fa fa-check"></i>Weekly Meeting Schedule</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-objectives"><i class="fa fa-check"></i>Course Objectives</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-tools"><i class="fa fa-check"></i>Course Tools</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#preclass-checklist"><i class="fa fa-check"></i>Preclass checklist</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-material"><i class="fa fa-check"></i>Course Material</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#required-material"><i class="fa fa-check"></i>Required Material</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#reference-material"><i class="fa fa-check"></i>Reference Material</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#additional-optional-readings"><i class="fa fa-check"></i>Additional Optional Readings</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#schedule"><i class="fa fa-check"></i>Schedule</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#evaluation-components"><i class="fa fa-check"></i>Evaluation Components</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#grade-determination"><i class="fa fa-check"></i>Grade Determination</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-guidelines"><i class="fa fa-check"></i>Course Guidelines</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#academic-integrity"><i class="fa fa-check"></i>Academic Integrity</a></li>
+<li><a href="index.html#bharat-bhushan-verma-instructor"><span>Bharat Bhushan Verma</span> Instructor</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>1</b> Getting Started</a><ul>
+<li class="chapter" data-level="1.1" data-path="getting-started.html"><a href="getting-started.html#media"><i class="fa fa-check"></i><b>1.1</b> Media</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="getting-started.html"><a href="getting-started.html#why-piazza"><i class="fa fa-check"></i><b>1.1.1</b> Why Piazza?</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="getting-started.html"><a href="getting-started.html#datacamp-exercises"><i class="fa fa-check"></i><b>1.2</b> DataCamp Exercises</a></li>
+<li class="chapter" data-level="1.3" data-path="getting-started.html"><a href="getting-started.html#tools-and-methods"><i class="fa fa-check"></i><b>1.3</b> Tools and Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="more-sql.html"><a href="more-sql.html"><i class="fa fa-check"></i><b>2</b> More SQL</a><ul>
+<li class="chapter" data-level="2.1" data-path="more-sql.html"><a href="more-sql.html#media-1"><i class="fa fa-check"></i><b>2.1</b> Media</a></li>
+<li class="chapter" data-level="2.2" data-path="more-sql.html"><a href="more-sql.html#datacamp-exercises-1"><i class="fa fa-check"></i><b>2.2</b> DataCamp Exercises</a></li>
+<li class="chapter" data-level="2.3" data-path="more-sql.html"><a href="more-sql.html#what-is-sql-anyway"><i class="fa fa-check"></i><b>2.3</b> What is SQL Anyway</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sql-to-r.html"><a href="sql-to-r.html"><i class="fa fa-check"></i><b>3</b> SQL to R</a><ul>
+<li class="chapter" data-level="3.1" data-path="sql-to-r.html"><a href="sql-to-r.html#media-2"><i class="fa fa-check"></i><b>3.1</b> Media</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="sql-to-r.html"><a href="sql-to-r.html#suggested-readings"><i class="fa fa-check"></i><b>3.1.1</b> Suggested Readings</a></li>
+<li class="chapter" data-level="3.1.2" data-path="sql-to-r.html"><a href="sql-to-r.html#videos-yet-to-upload"><i class="fa fa-check"></i><b>3.1.2</b> Videos (Yet to upload)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="sql-to-r.html"><a href="sql-to-r.html#data-management"><i class="fa fa-check"></i><b>3.2</b> Data Management</a></li>
+<li class="chapter" data-level="3.3" data-path="sql-to-r.html"><a href="sql-to-r.html#dplyr"><i class="fa fa-check"></i><b>3.3</b> dplyr</a></li>
+<li class="chapter" data-level="3.4" data-path="sql-to-r.html"><a href="sql-to-r.html#ggplot2"><i class="fa fa-check"></i><b>3.4</b> ggplot2</a></li>
+<li class="chapter" data-level="3.5" data-path="sql-to-r.html"><a href="sql-to-r.html#grammar-of-graphics"><i class="fa fa-check"></i><b>3.5</b> Grammar of graphics</a></li>
+<li class="chapter" data-level="3.6" data-path="sql-to-r.html"><a href="sql-to-r.html#dplyr-window-functions"><i class="fa fa-check"></i><b>3.6</b> dplyr window functions</a></li>
+<li class="chapter" data-level="3.7" data-path="sql-to-r.html"><a href="sql-to-r.html#perception"><i class="fa fa-check"></i><b>3.7</b> Perception</a></li>
+<li class="chapter" data-level="3.8" data-path="sql-to-r.html"><a href="sql-to-r.html#planning-a-visualization"><i class="fa fa-check"></i><b>3.8</b> Planning a Visualization</a></li>
+<li class="chapter" data-level="3.9" data-path="sql-to-r.html"><a href="sql-to-r.html#datacamp-exercises-2"><i class="fa fa-check"></i><b>3.9</b> DataCamp Exercises</a></li>
+<li class="chapter" data-level="3.10" data-path="sql-to-r.html"><a href="sql-to-r.html#credits"><i class="fa fa-check"></i><b>3.10</b> Credits</a></li>
+<li class="chapter" data-level="3.11" data-path="sql-to-r.html"><a href="sql-to-r.html#datacamp-exercises-3"><i class="fa fa-check"></i><b>3.11</b> DataCamp Exercises</a></li>
+<li class="chapter" data-level="3.12" data-path="sql-to-r.html"><a href="sql-to-r.html#what-is-r"><i class="fa fa-check"></i><b>3.12</b> What is R?</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html"><i class="fa fa-check"></i><b>4</b> Exploratory Data Analysis</a><ul>
+<li class="chapter" data-level="4.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#media-3"><i class="fa fa-check"></i><b>4.1</b> Media</a></li>
+<li class="chapter" data-level="4.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#media-4"><i class="fa fa-check"></i><b>4.2</b> Media</a></li>
+<li class="chapter" data-level="4.3" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#joining-data"><i class="fa fa-check"></i><b>4.3</b> joining data</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#inner-joins"><i class="fa fa-check"></i><b>4.3.1</b> inner joins</a></li>
+<li class="chapter" data-level="4.3.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#outer-joins"><i class="fa fa-check"></i><b>4.3.2</b> outer joins</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#design-guidelines"><i class="fa fa-check"></i><b>4.4</b> Design Guidelines</a></li>
+<li class="chapter" data-level="4.5" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#geom-selection"><i class="fa fa-check"></i><b>4.5</b> geom selection</a></li>
+<li class="chapter" data-level="4.6" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#r-markdown"><i class="fa fa-check"></i><b>4.6</b> R Markdown</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#code-chunks"><i class="fa fa-check"></i><b>4.6.1</b> code chunks</a></li>
+<li class="chapter" data-level="4.6.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#inline-code"><i class="fa fa-check"></i><b>4.6.2</b> inline code</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#yaml-options"><i class="fa fa-check"></i><b>4.7</b> YAML options</a></li>
+<li class="chapter" data-level="4.8" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#embedding-plots"><i class="fa fa-check"></i><b>4.8</b> Embedding plots</a></li>
+<li class="chapter" data-level="4.9" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#prettier-tables"><i class="fa fa-check"></i><b>4.9</b> Prettier tables</a></li>
+<li class="chapter" data-level="4.10" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#knitting"><i class="fa fa-check"></i><b>4.10</b> Knitting</a></li>
+<li class="chapter" data-level="4.11" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#datacamp-exercises-4"><i class="fa fa-check"></i><b>4.11</b> DataCamp Exercises</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://www.linkedin.com/in/dearbharat/" target="blank">Published with Bharat Bhushan Verma</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MBA 6693 Data Analytics for Business Decisions</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sql-to-r" class="section level1">
+<h1><span class="header-section-number">Week 3</span> SQL to R</h1>
+<p><i>This unit spans <b>Mon, Jan 20, 2020 </b>through <b>Sat, Jan 25, 2020</b>.</i><br />
+<b>At 11:59 PM on Sat, Jan 25, 2020 the following items are due:</b></p>
+<ul>
+<li>Introduction to the Tidyverse</li>
+</ul>
+<p><strong>Please do not start the assigned datacamp tutorials until class on Tuesday January 21 so that you have a good foundation to attempt the tutorial assignment. </strong></p>
+<p>Now that we’ve learnt SQL and communication with RDBMS, we will cover how we extract data from SQL into R environment. We will learn some fundamental building blocks of R in the classroom.</p>
+<p>Besides it is time to introduce some packages as well which will make our life easier when manipulating and exploring data. We’ll also use external packages to visually explore our data (i.e., create simple visualizations).</p>
+<div id="media-2" class="section level2">
+<h2><span class="header-section-number">3.1</span> Media</h2>
+<div id="suggested-readings" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Suggested Readings</h3>
+<ul>
+<li><a href="https://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html?_r=0" target="&#39;_blank">For Big-Data Scientists, ‘Janitor Work’ Is Key Hurdle to Insights</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Markdown" target="&#39;_blank">Markdown</a></li>
+<li><a href="https://cran.r-project.org/doc/FAQ/R-FAQ.html#What-is-CRAN_003f" target="&#39;_blank">R-FAQ 2.10 - What is CRAN?</a></li>
+<li><a href="https://www.datacamp.com/community/tutorials/r-packages-guide" target="&#39;_blank">R Packages: A Beginner’s Guide</a></li>
+<li><a href="https://rviews.rstudio.com/2017/06/08/what-is-the-tidyverse/">What is the tidyverse?</a>, by Joseph Rickert{target=’_blank}</li>
+</ul>
+</div>
+<div id="videos-yet-to-upload" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> Videos (Yet to upload)</h3>
+<ul>
+<li>Video: <a href="http://www.youtube.com">Installing R and RStudio for Windows</a></li>
+<li>Video: <a href="http://www.youtube.com">Installing R and RStudio for Mac</a></li>
+<li>Video: <a href="http://www.youtube.com">Data wrangling and the analytics pipeline</a></li>
+<li>Video: <a href="http://www.youtube.com">Getting Started with R and RStudio</a></li>
+<li>Video: <a href="http://www.youtube.com">Scalars</a></li>
+<li>Video: <a href="http://www.youtube.com">Vectors</a></li>
+</ul>
+</div>
+</div>
+<div id="data-management" class="section level2">
+<h2><span class="header-section-number">3.2</span> Data Management</h2>
+<p>The NY Times article describes what they aptly termed “janitorial” work as <em>data wrangling</em>. The other often used term is <em>data munging</em> and it always involves getting data from some <em>raw</em> format into something more usable. How much work this requires depends on a few factors including the <em>completeness</em>, <em>correctness</em>, <em>structure</em> and <em>source/type</em> of data.</p>
+<p><em>Completeness</em> and <em>correctness</em> are what they sound like. Is there missing data, and is the data that we have correct? Assuming we have some missing data, we have a couple of options – we can discard the missing data, or <em>impute</em> (i.e., guess) what the missing values might be. We usually want to find out if our data is complete and correct before we start doing any analysis on it. The process of correcting data is often referred to as data cleansing or scrubbing.</p>
+<p><em>Structure</em> is a little more abstract concept. Highly structured data is usually the easiest to work with. It is often what we see in a relational database where we have <em>fields</em> like <code>start_date, last_name, hourly_wage</code> that can only store acceptable values. Items you find in a spreadsheet are also highly structured, albeit typically less structured than a relational database.</p>
+<p><em>Unstructured</em> data are pretty much the opposite but data isn’t usually completely unstructured. Most of what we consider to be unstructured data could be classified as <em>semi-structured</em>.</p>
+<p><img src="img/awatch_tweet.png" width="601" /></p>
+<p>If we examine the tweet above, there are some very structured data. <code>@TheEllenShow</code> is the account name, <code>#AppleLive</code> is a categorical label we can place on a tweet called a hashtag. The time, date, count of retweets and likes are also examples of structured data. The actual text of the tweet is where we have significantly less structure. It is also the hardest for machines to interpret or imply meaning. Product companies often analyze tweets as a way of viewing trends in product sentiment. At first glance “so excited” seems like a very positive comment. As a human, we don’t have to work too hard to figure out this tweet is sarcastic and isn’t definitively reflecting a positive sentiment.</p>
+<p>The <em>source/type</em> of data often acts as a rough indicator of how much data wrangling we are going to need to do. For example, if I was starting an analytics project and you told me all of the data came from an internal corporate reporting database, I would be at least somewhat confident that the amount of preparation for analysis wouldn’t be overwhelming. If you said, however, that the data came from a bunch of legal briefs (as pdf files) and phone calls (as audio files), my expectations of preparation time would change dramatically. In this course, we will be mostly working with and cleaning structured data but exposing you to the process and concept of tidying data, which applies to both structured and unstructured data.</p>
+<p>All analytics projects have an associated workflow with them. The tools we will be using in this class support the tidy workflow described in <a href="http://r4ds.had.co.nz/introduction.html">R for Data Science</a> and shown below.</p>
+<p><img src="img/data-science.png" /><br />
+While this course will cover all stages of the workflow, we will be spending considerable amounts of time: <em>importing</em> data from a variety of sources; <em>tidying</em> our data to a consistent format; <em>transforming</em> the data to conform with what we want to analyze and; <em>communicating</em> results. Your first assignment, due at the end of this unit, has you focusing on communications by publishing a simple report about yourself. Before we get to explore any of these stages, we need to learn a commonly used tool for analytics, namely R.
+## The tidyverse</p>
+<p>The tidyverse is a set of external R packages that work together and support the analytics workflow we introduced in the first unit. It was originally casually referred to as the “hadleyverse” as the lead developer on all the initial packages was Hadley Wickham, but he preferred to refer to these packages as the tidyverse explicitly. There are <a href="https://www.tidyverse.org/packages/">many packages in the tidyverse</a>, but for this unit, we will be covering two of the packages that are automatically loaded when you issue the command <code>library(tidyverse)</code>, namely <a href="https://dplyr.tidyverse.org">dplyr</a> for data manipulation and <a href="https://ggplot2.tidyverse.org">ggplot2</a> for visualization. If you like to follow along with RStudio while you read these notes, make sure you install the tidyverse package (RStudio –&gt; Tools –&gt; Install Package –&gt; tidyverse) and load the library.</p>
+<p>Before we get started with dplyr, it is important to mention that all of the tidyverse package support the pipe operator <code>%&gt;%</code> which is used to chain together statements and is technically part of the tidyverse package <a href="https://magrittr.tidyverse.org">magrittr</a>. We’ll start out this unit by loading the core packages in the tidyverse.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
+</div>
+<div id="dplyr" class="section level2">
+<h2><span class="header-section-number">3.3</span> dplyr</h2>
+<p>dplyr is a grammar for data manipulation that uses specific verbs to manipulate data.</p>
+<p>it is often difficult to get used to asking questions in dplyr instead of plain English. One way to help improve your thought process is to understand the <em>verbs</em> of dplyr and their purpose.</p>
+<ul>
+<li><code>select</code> chooses specific columns.</li>
+<li><code>rename</code> renames specific columns and selects all.</li>
+<li><code>filter</code> chooses specific rows.</li>
+<li><code>arrange</code> sorts rows.</li>
+<li><code>mutate</code> creates new columns.</li>
+<li><code>transmute</code> is like <code>mutate</code> but doesn’t keep your old columns.</li>
+<li><code>distinct</code> returns unique rows.</li>
+<li><code>summarize</code> aggregates or chunks.</li>
+<li><code>slice</code> selects rows by position.</li>
+<li><code>sample</code> takes samples of data (seldom used).</li>
+</ul>
+<p>We won’t be discussing <code>sample</code> as it is more commonly used in the sciences, but the other verbs are all commonly used. The other two key <em>non-verb</em> actions in dplyr are <code>group_by</code>, which is typically applied when using summarize and the pipe operator <code>%&gt;%</code> which is used to combine verbs. I give a better visual representation of the queries below in the video, but let’s start by reading in a comma separated values (csv) file from a url and having a quick look at it. <em>Note: we will learn all about importing different filetypes later in the semester.</em></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">got &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;./data/got.csv&quot;</span>,</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">                <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">got</a></code></pre></div>
+<pre><code>##     lastname firstname          major      year  gpa
+## 1       Snow      John Nordic Studies    Junior 3.23
+## 2  Lannister    Tyrion Communications Sophomore 3.83
+## 3  Targaryen  Daenerys        Zoology  Freshman 3.36
+## 4     Bolton    Ramsay        Phys Ed  Freshman 2.24
+## 5      Stark    Eddard        History    Senior 2.78
+## 6    Clegane    Gregor        Phys Ed Sophomore 3.23
+## 7    Baelish     Peter Communications  Freshman 2.84
+## 8  Baratheon   Joffrey        History  Freshman 1.87
+## 9      Drogo      Khal        Zoology    Senior 3.38
+## 10     Tarly   Samwise Nordic Studies  Freshman 2.39</code></pre>
+<p><code>got.csv</code> is read into the data frame <code>got</code> using <code>read.csv</code>. We’ll use the pipe operator <code>%&gt;%</code> to pipe the data frame the <code>select</code> verb to choose specific columns (e.g., lastname, firstname, gpa). Within <code>select</code>, I can also change column names. <em>Please note: I am not storing the results of these queries in any variables…I am sending them directly out to output (i.e., printing them out).</em> Below, we are explicitly saying “take the data frame <code>got</code> and <code>select</code> the columns <code>lastname</code>, <code>firstname</code>, and <code>gpa</code> and while you are at it, rename the <code>lastname</code> column to <code>surname</code>.”</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">got <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="dt">surname =</span> lastname, firstname, gpa)</a></code></pre></div>
+<pre><code>##      surname firstname  gpa
+## 1       Snow      John 3.23
+## 2  Lannister    Tyrion 3.83
+## 3  Targaryen  Daenerys 3.36
+## 4     Bolton    Ramsay 2.24
+## 5      Stark    Eddard 2.78
+## 6    Clegane    Gregor 3.23
+## 7    Baelish     Peter 2.84
+## 8  Baratheon   Joffrey 1.87
+## 9      Drogo      Khal 3.38
+## 10     Tarly   Samwise 2.39</code></pre>
+<p>We can use <code>rename</code> to change column names…it selects all the columns in the data frame. So if I wanted to show the entire data frame using the more formal surname instead of lastname, I could do the following without having to specify all of the names in <code>select</code>.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">got <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">rename</span>(<span class="dt">surname =</span> lastname)</a></code></pre></div>
+<pre><code>##      surname firstname          major      year  gpa
+## 1       Snow      John Nordic Studies    Junior 3.23
+## 2  Lannister    Tyrion Communications Sophomore 3.83
+## 3  Targaryen  Daenerys        Zoology  Freshman 3.36
+## 4     Bolton    Ramsay        Phys Ed  Freshman 2.24
+## 5      Stark    Eddard        History    Senior 2.78
+## 6    Clegane    Gregor        Phys Ed Sophomore 3.23
+## 7    Baelish     Peter Communications  Freshman 2.84
+## 8  Baratheon   Joffrey        History  Freshman 1.87
+## 9      Drogo      Khal        Zoology    Senior 3.38
+## 10     Tarly   Samwise Nordic Studies  Freshman 2.39</code></pre>
+<p>If I wanted to filter the results above to show gpa’s that are greater than or equal to 3.5, I would pipe the results to <code>filter</code> to choose those specific rows.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">got <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">rename</span>(<span class="dt">surname =</span> lastname) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(gpa <span class="op">&gt;=</span><span class="st"> </span><span class="fl">3.5</span>)</a></code></pre></div>
+<pre><code>##     surname firstname          major      year  gpa
+## 1 Lannister    Tyrion Communications Sophomore 3.83</code></pre>
+<p>If instead, I just wanted to sort the selected columns from highest to lowest gpa, I would use <code>arrange</code>. I use <code>desc</code> because the default sort order is lowest to highest.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">got <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">rename</span>(<span class="dt">surname =</span> lastname) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(<span class="kw">desc</span>(gpa))</a></code></pre></div>
+<pre><code>##      surname firstname          major      year  gpa
+## 1  Lannister    Tyrion Communications Sophomore 3.83
+## 2      Drogo      Khal        Zoology    Senior 3.38
+## 3  Targaryen  Daenerys        Zoology  Freshman 3.36
+## 4       Snow      John Nordic Studies    Junior 3.23
+## 5    Clegane    Gregor        Phys Ed Sophomore 3.23
+## 6    Baelish     Peter Communications  Freshman 2.84
+## 7      Stark    Eddard        History    Senior 2.78
+## 8      Tarly   Samwise Nordic Studies  Freshman 2.39
+## 9     Bolton    Ramsay        Phys Ed  Freshman 2.24
+## 10 Baratheon   Joffrey        History  Freshman 1.87</code></pre>
+<p>Suppose I wanted to create a dean’s list column called <code>dlist</code> and set it to <code>TRUE</code> if the <code>gpa &gt;= 3.5</code> and <code>FALSE</code> otherwise. I would use <code>mutate</code> for that. <em>Note: in this example, the column is only created in the output, and the data frame is unaltered</em>.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">got <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">rename</span>(<span class="dt">surname =</span> lastname) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">dlist =</span> gpa <span class="op">&gt;=</span><span class="st"> </span><span class="fl">3.5</span>)</a></code></pre></div>
+<pre><code>##      surname firstname          major      year  gpa dlist
+## 1       Snow      John Nordic Studies    Junior 3.23 FALSE
+## 2  Lannister    Tyrion Communications Sophomore 3.83  TRUE
+## 3  Targaryen  Daenerys        Zoology  Freshman 3.36 FALSE
+## 4     Bolton    Ramsay        Phys Ed  Freshman 2.24 FALSE
+## 5      Stark    Eddard        History    Senior 2.78 FALSE
+## 6    Clegane    Gregor        Phys Ed Sophomore 3.23 FALSE
+## 7    Baelish     Peter Communications  Freshman 2.84 FALSE
+## 8  Baratheon   Joffrey        History  Freshman 1.87 FALSE
+## 9      Drogo      Khal        Zoology    Senior 3.38 FALSE
+## 10     Tarly   Samwise Nordic Studies  Freshman 2.39 FALSE</code></pre>
+<p>If I just wanted to show my transformed variables and no other variables, I could use <code>transmute</code></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">got <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">transmute</span>(<span class="dt">name =</span> <span class="kw">paste</span>(firstname, lastname), <span class="dt">dlist =</span> gpa <span class="op">&gt;=</span><span class="st"> </span><span class="fl">3.5</span>)</a></code></pre></div>
+<pre><code>##                  name dlist
+## 1           John Snow FALSE
+## 2    Tyrion Lannister  TRUE
+## 3  Daenerys Targaryen FALSE
+## 4       Ramsay Bolton FALSE
+## 5        Eddard Stark FALSE
+## 6      Gregor Clegane FALSE
+## 7       Peter Baelish FALSE
+## 8   Joffrey Baratheon FALSE
+## 9          Khal Drogo FALSE
+## 10      Samwise Tarly FALSE</code></pre>
+<p>If we wanted to list the majors represented in the <code>got</code> data frame, we would use <code>distinct</code>, which restricts to unique(distinct) output.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">got <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">distinct</span>(major)</a></code></pre></div>
+<pre><code>##            major
+## 1 Nordic Studies
+## 2 Communications
+## 3        Zoology
+## 4        Phys Ed
+## 5        History</code></pre>
+<p>Aggregation often adds the most complexity to a query, and it is quite common to see <code>summarize</code> combined with <code>group_by</code>. For example, if we wanted to show the average gpa for each major, we would use <code>group_by</code> to declare that we are doing a calculation for each major and use <code>summarize</code> to define the mean calculation. You’ll notice that instead of a data frame, we are outputting a <code>tibble</code>, which is essentially an enhanced data frame that can store more complex data.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">got <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(major) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarize</span>(<span class="dt">average_gpa =</span> <span class="kw">mean</span>(gpa))</a></code></pre></div>
+<pre><code>## # A tibble: 5 x 2
+##   major          average_gpa
+##   &lt;chr&gt;                &lt;dbl&gt;
+## 1 Communications        3.34
+## 2 History               2.33
+## 3 Nordic Studies        2.81
+## 4 Phys Ed               2.74
+## 5 Zoology               3.37</code></pre>
+<p>Suppose we wanted to show the name of the student with the highest gpa for each major. We could do this in a few different ways. In all cases, since we are doing it for each major, we will be using <code>group_by(major)</code>. In the first case, after grouping, we sort in descending gpa order and slice out the first(1) instance of each student.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">got <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(major) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(<span class="kw">desc</span>(gpa)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">slice</span>(<span class="dv">1</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 5 x 5
+## # Groups:   major [5]
+##   lastname  firstname major          year        gpa
+##   &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;          &lt;chr&gt;     &lt;dbl&gt;
+## 1 Lannister Tyrion    Communications Sophomore  3.83
+## 2 Stark     Eddard    History        Senior     2.78
+## 3 Snow      John      Nordic Studies Junior     3.23
+## 4 Clegane   Gregor    Phys Ed        Sophomore  3.23
+## 5 Drogo     Khal      Zoology        Senior     3.38</code></pre>
+<p>In the second case, we decide we want to use the <code>top_n</code> function.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1">got <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(major) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(<span class="kw">desc</span>(gpa)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">top_n</span>(<span class="dv">1</span>)</a></code></pre></div>
+<pre><code>## Selecting by gpa</code></pre>
+<pre><code>## # A tibble: 5 x 5
+## # Groups:   major [5]
+##   lastname  firstname major          year        gpa
+##   &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;          &lt;chr&gt;     &lt;dbl&gt;
+## 1 Lannister Tyrion    Communications Sophomore  3.83
+## 2 Drogo     Khal      Zoology        Senior     3.38
+## 3 Snow      John      Nordic Studies Junior     3.23
+## 4 Clegane   Gregor    Phys Ed        Sophomore  3.23
+## 5 Stark     Eddard    History        Senior     2.78</code></pre>
+<p>In the third case, we use the <code>min_rank</code> function within <code>filter</code>.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1">got <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(major) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">min_rank</span>(<span class="kw">desc</span>(gpa)) <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 5 x 5
+## # Groups:   major [5]
+##   lastname  firstname major          year        gpa
+##   &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;          &lt;chr&gt;     &lt;dbl&gt;
+## 1 Snow      John      Nordic Studies Junior     3.23
+## 2 Lannister Tyrion    Communications Sophomore  3.83
+## 3 Stark     Eddard    History        Senior     2.78
+## 4 Clegane   Gregor    Phys Ed        Sophomore  3.23
+## 5 Drogo     Khal      Zoology        Senior     3.38</code></pre>
+<p>This should seem somewhat confusing, and perhaps it is best to describe what is going on here. <code>top_n</code> is an easier to use “wrapper” function that combines <code>filter</code> and <code>min_rank</code>. <code>slice</code> was added later to <code>dplyr</code> to make it simpler not just to select the top. For example, if I wanted to select positions 2 through 4, I would use <code>slice(2:4)</code> There is no equivalent <code>top_n</code> for this, and I would end up resorting to the harder to follow <code>filter(min_rank(...) %in c(2:4)</code> To simplify, you should try to get comfortable with <code>slice</code> but feel free to use <code>top_n</code> as well.</p>
+</div>
+<div id="ggplot2" class="section level2">
+<h2><span class="header-section-number">3.4</span> ggplot2</h2>
+<p>We aren’t wired to look at tons of numbers. In analytics, we tend to use visualizations to understand our data and observe patterns quickly. One of R’s primary strengths is its visualization libraries. For static visualizations, <code>ggplot2</code> is possibly the most commonly used library.</p>
+<p>We often think of visualizations as a way to tell stories to others involving data. In this case, we are merely using visualization to explore our data. With exploratory visualizations, we aren’t that focused on formatting and ease of interpretation by others because they are for our private consumption. As we’ll learn this semester, <code>ggplot2</code> is commonly used for both exploratory visualizations and to communicate results.</p>
+</div>
+<div id="grammar-of-graphics" class="section level2">
+<h2><span class="header-section-number">3.5</span> Grammar of graphics</h2>
+<p>Base R graphics are conceptually like working from a blank canvas. If you’ve used Microsoft Excel to create a visualization, you typically select a chart from a library. Leland Wilkinson published The Grammar of Graphics in 1999 and described a framework for constructing visualizations. This structured framework falls nicely in between the unstructured blank canvas and the rigid “select a chart” model. The “gg” in <code>ggplot2</code> actually stands for <em>grammar of graphics</em>. Another commonly used visualization software application, Tableau, also uses the grammar of graphics as a framework (Leland Wilkinson was the VP of Statistics for Tableau). It is important to note that this grammar doesn’t help you select what visualizations to use, it merely helps you construct them.</p>
+<p>There are three critical components for every ggplot2 plot.</p>
+<ol style="list-style-type: decimal">
+<li>data</li>
+<li>a set of aesthetic mappings between variables in the data and visual properties, and</li>
+<li>at least one layer which describes how to render each observation. Layers are usually created with a <code>geom</code> function.</li>
+</ol>
+<p>First, we’ll take a look at a base graphics scatterplot of miles per gallon(mpg) and displacement(disp) using the built-in <code>mtcars</code> data frame:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="kw">plot</span>(mtcars<span class="op">$</span>mpg, mtcars<span class="op">$</span>disp)</a></code></pre></div>
+<p><img src="UNBMBA6693_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>If I want to create a similar visualization in ggplot2, I would start with the data and the aesthetics (<code>aes</code>) using the <code>ggplot</code> function.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mtcars, <span class="kw">aes</span>(<span class="dt">x =</span> mpg, <span class="dt">y =</span> disp))</a></code></pre></div>
+<p><img src="UNBMBA6693_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>You’ll notice that there aren’t any points in our graph. That is because we have yet to create a layer to render the observations. Recall that we typically use a <code>geom</code> function for this. Scatterplots are rendered using <code>geom_point</code>.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mtcars, <span class="kw">aes</span>(<span class="dt">x =</span> mpg, <span class="dt">y =</span> disp)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb29-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>()</a></code></pre></div>
+<p><img src="UNBMBA6693_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Looking back at the layered grammar we created:</p>
+<ol style="list-style-type: decimal">
+<li>data - <code>mtcars</code></li>
+<li>aesthetics - we map <code>mpg</code> to the x-axis and <code>disp</code> to the y-axis</li>
+<li>layer - we use points as the geometric object to render the values</li>
+</ol>
+<p>You’ll probably notice that the visualization is a little more refined than the one we created with <code>plot</code>. One of the benefits of using ggplot2 is that the defaults are really good.</p>
+<p>We can also apply other aesthetic mappings to our visualization, like mapping cylinder to color:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mtcars, <span class="kw">aes</span>(<span class="dt">x =</span> mpg, <span class="dt">y =</span> disp, <span class="dt">color =</span> <span class="kw">factor</span>(cyl))) <span class="op">+</span></a>
+<a class="sourceLine" id="cb30-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>()</a></code></pre></div>
+<p><img src="UNBMBA6693_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>I used <code>factor</code> to effectively treat displacement as a factor (i.e., enumerated or categorical) variable. This creates a potentially more diverging color scheme and prevents a legend that might include values that don’t exist in the data (shown below without the use of <code>factor</code>).</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mtcars, <span class="kw">aes</span>(<span class="dt">x =</span> mpg, <span class="dt">y =</span> disp, <span class="dt">color =</span> cyl)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb31-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>()</a></code></pre></div>
+<p><img src="UNBMBA6693_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>Some other aesthetic mappings include size:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mtcars, <span class="kw">aes</span>(<span class="dt">x =</span> mpg, <span class="dt">y =</span> disp, <span class="dt">color =</span> <span class="kw">factor</span>(cyl), <span class="dt">size =</span> hp)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb32-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>()</a></code></pre></div>
+<p><img src="UNBMBA6693_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>…and shape:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mtcars, <span class="kw">aes</span>(<span class="dt">x =</span> mpg, <span class="dt">y =</span> disp, <span class="dt">color =</span> <span class="kw">factor</span>(cyl), <span class="dt">size =</span> hp, <span class="dt">shape =</span> <span class="kw">factor</span>(gear))) <span class="op">+</span></a>
+<a class="sourceLine" id="cb33-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>()</a></code></pre></div>
+<p><img src="UNBMBA6693_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>The aesthetics we use are somewhat dependent on how we choose to encode our data. Some aesthetics not used or not applicable here are fill, linetype, weight, alpha, and text. The visualization above is somewhat difficult to comprehend, and we might be better off rethinking what data we want to show and how we want to communicate it.</p>
+<p>There are also a variety of <a href="http://docs.ggplot2.org/current/">geoms</a> for bars, boxplots, smoothing lines, and others that you can use, some of which we will cover thoughout the semester.</p>
+<p>The remaining grammatical elements that we have yet to cover, are:</p>
+<ul>
+<li>The <code>scale</code>s map values in the data space to values in an aesthetic space, whether it be color, or size, or shape. Scales draw a legend or axes, which provide an inverse mapping to make it possible to read the original data values from the plot.</li>
+<li>A coordinate system, <code>coord</code> for short, describes how data coordinates are mapped to the plane of the graphic. It also provides axes and gridlines to make it possible to read the graph. We normally use a Cartesian coordinate system, but some others are available, including polar coordinates and map projections.</li>
+<li>A <code>facet</code>ing specification describes how to break up the data into subsets and how to display those subsets as small multiples. This is also known as conditioning or latticing/trellising.</li>
+<li>A <code>theme</code> which controls the finer points of display, like the font size and background colour. While the defaults in ggplot2 have been chosen with care, you may need to consult other references to create an attractive plot. A good starting place is Edward Tufte’s early works (Tufte, 1990, 1997, 2001).</li>
+</ul>
+</div>
+<div id="dplyr-window-functions" class="section level2">
+<h2><span class="header-section-number">3.6</span> dplyr window functions</h2>
+<p>As defined in the <code>dplyr</code> documentation, a <a href="https://cran.r-project.org/web/packages/dplyr/vignettes/window-functions.html">window function</a> is a variation on an aggregation function. Where an aggregation function, like <code>sum()</code> and <code>mean()</code>, takes n inputs and return a single value, a window function returns n values.</p>
+<p>The window functions we’ll be dealing with in this class are often ranking functions (like <code>min_rank()</code>) and <em>offset</em> functions (like <code>lag()</code> which was introduced in the last unit). If you have ever worked with relational databases, window functions are commonly implemented in <a href="https://en.wikipedia.org/wiki/SQL">SQL</a>.</p>
+<p>The ranking and ordering functions you may use in <code>dplyr</code> are:</p>
+<ul>
+<li><code>row_number()</code></li>
+<li><code>min_rank()</code> which allows for gaps in ranks (e.g., if two rows are tied for first, the next rank is third)</li>
+<li><code>dense_rank()</code> which doesn’t allow for gaps in ranks (e.g., if two rows are tied for first, the next rank is second)</li>
+<li><code>percent_rank()</code> a number between 0 and 1 computed by rescaling min_rank to [0, 1].</li>
+<li><code>cume_dist()</code> a cumulative distribution function. Proportion of all values less than or equal to the current rank.</li>
+<li><code>ntile()</code> a rough rank, which breaks the input vector into n buckets</li>
+</ul>
+<p>If you look at a ranking of <code>gpa</code>’s in the <code>got</code> data, 3.23 is tied for fourth place, and 2.84, which is the 6th row in the arranged data frame would be in sixth place using <code>min_rank()</code>, fifth place, using <code>dense_rank()</code></p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1">got &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">url</span>(<span class="st">&quot;http://jamessuleiman.com/teaching/datasets/got.csv&quot;</span>),</a>
+<a class="sourceLine" id="cb34-2" data-line-number="2">                <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb34-3" data-line-number="3">got <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">row_number</span>(<span class="kw">desc</span>(gpa)) <span class="op">==</span><span class="st"> </span><span class="dv">6</span>)</a></code></pre></div>
+<pre><code>##   lastname firstname          major     year  gpa
+## 1  Baelish     Peter Communications Freshman 2.84</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1">got <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">min_rank</span>(<span class="kw">desc</span>(gpa)) <span class="op">==</span><span class="st"> </span><span class="dv">6</span>)</a></code></pre></div>
+<pre><code>##   lastname firstname          major     year  gpa
+## 1  Baelish     Peter Communications Freshman 2.84</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1">got <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">dense_rank</span>(<span class="kw">desc</span>(gpa)) <span class="op">==</span><span class="st"> </span><span class="dv">5</span>)</a></code></pre></div>
+<pre><code>##   lastname firstname          major     year  gpa
+## 1  Baelish     Peter Communications Freshman 2.84</code></pre>
+<p>We could also use the <code>slice</code> verb to accomplish the same thing.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1">got <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(<span class="kw">desc</span>(gpa)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">slice</span>(<span class="dv">6</span>)</a></code></pre></div>
+<pre><code>##   lastname firstname          major     year  gpa
+## 1  Baelish     Peter Communications Freshman 2.84</code></pre>
+<p>We’ll add the columns <code>p_rank</code>, <code>c_dist</code> and <code>ntile</code> to show you how the remaining ranking functions work. We’ll use four buckets for <code>ntile()</code></p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1">got <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(lastname, firstname, gpa) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(<span class="kw">desc</span>(gpa)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb42-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">p_rank =</span> <span class="kw">percent_rank</span>(gpa), <span class="dt">cdist =</span> <span class="kw">cume_dist</span>(gpa), </a>
+<a class="sourceLine" id="cb42-3" data-line-number="3">         <span class="dt">ntile =</span> <span class="kw">ntile</span>(gpa, <span class="dv">4</span>))</a></code></pre></div>
+<pre><code>##     lastname firstname  gpa    p_rank cdist ntile
+## 1  Lannister    Tyrion 3.83 1.0000000   1.0     4
+## 2      Drogo      Khal 3.38 0.8888889   0.9     4
+## 3  Targaryen  Daenerys 3.36 0.7777778   0.8     3
+## 4       Snow      John 3.23 0.5555556   0.7     3
+## 5    Clegane    Gregor 3.23 0.5555556   0.7     3
+## 6    Baelish     Peter 2.84 0.4444444   0.5     2
+## 7      Stark    Eddard 2.78 0.3333333   0.4     2
+## 8      Tarly   Samwise 2.39 0.2222222   0.3     1
+## 9     Bolton    Ramsay 2.24 0.1111111   0.2     1
+## 10 Baratheon   Joffrey 1.87 0.0000000   0.1     1</code></pre>
+<p>The offset functions you may use in <code>dplyr</code> are:</p>
+<ul>
+<li><code>lag()</code> returns the previous value in the vector - introduced in the last unit.</li>
+<li><code>lead()</code> returns the next value in a vector - the opposite of <code>lag()</code></li>
+</ul>
+<p>If we wanted to know the gpa of the next better <code>lag()</code> and next worst <code>lead()</code> students I would use:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1">got <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(<span class="kw">desc</span>(gpa)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">nxt_better =</span> <span class="kw">lag</span>(gpa), <span class="dt">nxt_worst =</span> <span class="kw">lead</span>(gpa))</a></code></pre></div>
+<pre><code>##     lastname firstname          major      year  gpa nxt_better nxt_worst
+## 1  Lannister    Tyrion Communications Sophomore 3.83         NA      3.38
+## 2      Drogo      Khal        Zoology    Senior 3.38       3.83      3.36
+## 3  Targaryen  Daenerys        Zoology  Freshman 3.36       3.38      3.23
+## 4       Snow      John Nordic Studies    Junior 3.23       3.36      3.23
+## 5    Clegane    Gregor        Phys Ed Sophomore 3.23       3.23      2.84
+## 6    Baelish     Peter Communications  Freshman 2.84       3.23      2.78
+## 7      Stark    Eddard        History    Senior 2.78       2.84      2.39
+## 8      Tarly   Samwise Nordic Studies  Freshman 2.39       2.78      2.24
+## 9     Bolton    Ramsay        Phys Ed  Freshman 2.24       2.39      1.87
+## 10 Baratheon   Joffrey        History  Freshman 1.87       2.24        NA</code></pre>
+<p>We’ve covered a good portion of <code>dplyr</code> and most of what you’ll be using for the remainder of the semester.</p>
+</div>
+<div id="perception" class="section level2">
+<h2><span class="header-section-number">3.7</span> Perception</h2>
+<p><a href="http://ccom.unh.edu/vislab/colin_ware.html">Colin Ware</a>, a professor at UNH, covers perception in great detail – in both of his books. It is relatively easy to follow visual design heuristics like “use high contrast,” and learning some rules and guidelines for constructing visualizations will go a long way to improve your skills at creating good visualizations. Understanding human visual perception takes a great deal more work but will also enhance your ability to ascertain a certain level of mastery in creating visualizations. With regards to high contrast, if we see the image below, the lion’s sand color is not in high contrast to the greenish hues of the tall grasses, yet we can spot the lion quite easily. We are genetically hardwired to see the lion as our genetic ancestry mostly doesn’t include people that could not see the lion - they were eaten.</p>
+<p><img src="img/lionGrass.jpg" alt="lion image" /><br />
+<em>Creative Commons licensed, Flickr user Heather Bradley</em></p>
+<p>Before we get too far into why we so readily see the lion and how that relates to creating good visualizations, it is essential to understand that some graphics are well understood because they are part of our visual language and are more similar to words on a page. A graphic like the one shown below would be an excellent example of this. I’ve removed the legend. Take a second and see if you can guess what this graphic is showing?</p>
+<p><img src="img/noaaweathermap.png" alt="Weather Map" />
+<em>NOAA Weather Map</em></p>
+<p>If you guessed that this is a temperature map for the United States, you would be correct. The reason you were able to guess what the map was is that you have seen it before. It is part of your learned language. If graphical perception was purely based on learned graphical conventions, understanding human visual perception would not be necessary in creating visualizations. One would merely spend time learning the conventions. Conventions are relevant, however observing the lion in the tall grass isn’t part of a learned language - it is sensory.</p>
+<p>As shown in the neuroscience video with Scott Murray, explaining visual perception to the layperson, with no background in neuroscience, is difficult. Here are the simplified steps he describes in the video:</p>
+<ol style="list-style-type: decimal">
+<li>Light enters our eye.</li>
+<li>Gets transduced (i.e., converted from light signals to neural signals) by our retina into visual information.</li>
+<li>Visual information travels to the cortex.</li>
+<li>Stops in the lateral geniculate nucleus in the thalamus.</li>
+<li>Projects directly to the cortex in an area called V1 or primary visual cortex.</li>
+<li>V1 to other cortical regions (e.g., V2, V3, parietal cortex, temporal lobe, etc.).</li>
+<li>There are upwards of 30 different visual areas in the brain.</li>
+<li>Perception is a complex interaction that isn’t fully understood. It also depends on what we are processing. For example, motion is processed differently than color.</li>
+</ol>
+<p>Sounds simple, right? Visual perception is an attempt by our brains to figure out what caused a pattern on our retina. In that process, the brain tries to prioritize what it thinks is important (e.g., the lion in the grass). This importance filtering is referred to as pre-attention. Look at the pattern below. Can you count how many times the number 5 appears in the list?</p>
+<p>13029302938203928302938203858293<br />
+10293820938205929382092305029309<br />
+39283029209502930293920359203920</p>
+<p>You had to attentively process the entire list to count the number of 5’s. This probably took quite a bit of time. Try counting again using the list below.</p>
+<p>
+<font color="silver">130293029382039283029382038<font color="black">5</font>8293<br />1029382093820<font color="black">5</font>92938209230<font color="black">5</font>029309<br />39283029209<font color="black">5</font>029302939203<font color="black">5</font>9203920</font>
+</p>
+<p>That was quite a bit easier and illustrative of preattentive processing. We told your brain what was important by using shading or color intensity. Many visual features have been identified as preattentive. Christopher G. Healy summarizes them very well in the table below copied from his <a href="https://www.csc2.ncsu.edu/faculty/healey/PP/">site on perception in visualization</a>. On Healy’s table, he also lists the citations for the psychology studies that examined each visual feature.</p>
+<table border="1" cellspacing="0" cellpadding="2">
+<tr>
+<td align="center" valign="top" width="195">
+<img src="./img/tg_orient.gif" alt="" border="1">line (blob) orientation<br>
+</td>
+<td align="center" valign="top" width="195">
+<img src="./img/tg_len.gif" alt="" border="1">length, width<br>
+</td>
+<td align="center" valign="top" width="195">
+<img src="./img/tg_closure.gif" alt="" border="1">closure<br>
+</td>
+<td align="center" valign="top" width="195">
+<img src="./img/tg_size.gif" alt="" border="1">size<br>
+</td>
+</tr>
+<tr>
+<td align="center" valign="top" width="195">
+<img src="./img/tg_curve.gif" alt="" border="1">curvature<br>
+</td>
+<td align="center" valign="top" width="195">
+<img src="./img/tg_den.gif" alt="" border="1">density, contrast<br>
+</td>
+<td align="center" valign="top" width="195">
+<img src="./img/tg_num.gif" alt="" border="1">number, estimation<br>
+</td>
+<td align="center" valign="top" width="195">
+<img src="./img/tg_hue.gif" alt="" border="1">colour (hue)<br>
+</td>
+</tr>
+<tr>
+<td align="center" valign="top" width="195">
+<img src="./img/tg_lum.gif" alt="" border="1">intensity, binocular lustre<br>
+</td>
+<td align="center" valign="top" width="195">
+<img src="./img/tg_isect.gif" alt="" border="1">intersection<br>
+</td>
+<td align="center" valign="top" width="195">
+<img src="./img/tg_term.gif" alt="" border="1">terminators<br>
+</td>
+<td align="center" valign="top" width="195">
+<img src="./img/tg_3d_depth.gif" alt="" border="1">3D depth cues, stereoscopic depth<br>
+</td>
+</tr>
+<tr>
+<td align="center" valign="top" width="195">
+<img src="./img/tg_flick.gif" alt="" border="1">flicker<br>
+</td>
+<td align="center" valign="top" width="195">
+<img src="./img/tg_dir.gif" alt="" border="1">direction of motion<br>
+</td>
+<td align="center" valign="top" width="195">
+<img src="./img/tg_vel.gif" alt="" border="1">velocity of motion<br>
+</td>
+<td align="center" valign="top" width="195">
+<img src="./img/tg_3d_light.gif" alt="" border="1"><br>lighting direction
+</td>
+</tr>
+<tr>
+<td align="center" valign="top" width="195">
+</td>
+<td align="center" valign="top" width="195">
+<img src="./img/tg_orient_3d.gif" alt="" border="1"><br>3D orientation
+</td>
+<td align="center" valign="top" width="195">
+<img src="./img/tg_npr.gif" alt="" border="1"><br>artistic properties
+</td>
+<td align="center" valign="top" width="195">
+</td>
+</tr>
+<tr>
+<td colspan="4" align="center" valign="top" width="798">
+<br> <font size="-1">Table 1: A partial list of preattentive visual features.</font>
+</td>
+</tr>
+</table>
+<p>So how does this explain our rapid identification of the lion in the tall grass? The explanation is probably quite a bit more complicated than the observable pattern shifts between the lion and her surroundings. As humans, we probably tend first to look where things might be hiding. Nonetheless, the volumes of human visual perception research help us provide some guidelines and considerations when preparing graphics.</p>
+<p>My favorite synthesis of best uses of visual encodings is <a href="http://complexdiagrams.com/wp-content/2012/01/VisualPropertiesTable.pdf">this chart</a>, compiled by Noah Iliinksy. He gives simple guidelines for selecting visual encodings depending on the type of data you have (i.e., quantitative, ordinal, categorical, relational). Don’t think of this as hard rules. It is more like suggested guidance in selecting visual encodings. For example, NOAA does use color to represent quantitative data (temperature) even though it is not recommended. Since the use of color in weather maps is so familiar, it has become part of our visual vocabulary and is not only considered acceptable but preferred.</p>
+</div>
+<div id="planning-a-visualization" class="section level2">
+<h2><span class="header-section-number">3.8</span> Planning a Visualization</h2>
+<p>Generally speaking, the starting point for planning a visualization is looking at the data. We typically want to get the data in a tidy format first. We’ll use a local dataset from <a href="https://data.maine.gov">data.maine.gov</a> – Maine population by county (per decade, 1960-2010). We’ll assume I don’t have a specific question that I’m trying to answer; I want to see what might be interesting. These could include:</p>
+<ul>
+<li>counties with abnormal growth rates (high or low)</li>
+<li>shifts in population over time</li>
+<li>etc.</li>
+</ul>
+<p>I’ve already downloaded and cleaned up the data to save you the trouble of going to data.maine.gov and downloading and tidying the original data.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1">county_pop &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">url</span>(<span class="st">&quot;http://jamessuleiman.com/teaching/datasets/maine_county_population.csv&quot;</span>),</a>
+<a class="sourceLine" id="cb46-2" data-line-number="2">                <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb46-3" data-line-number="3"><span class="kw">str</span>(county_pop)</a></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    96 obs. of  3 variables:
+##  $ county    : chr  &quot;Androscoggin&quot; &quot;Aroostook&quot; &quot;Cumberland&quot; &quot;Franklin&quot; ...
+##  $ year      : int  1960 1960 1960 1960 1960 1960 1960 1960 1960 1960 ...
+##  $ population: int  86312 106064 182751 20069 32293 89150 28575 18497 44345 126346 ...</code></pre>
+<p>I want to quickly see if there is a growth rate story to be told, so I’ll use ggplot2 to make small multiples for exploratory visualization. I’ll be doing one chart for each county using facets, which have their specification in the layered grammar. We’ll cover facets in more detail later in the semester. I’ll do a county by county comparison, so my aesthetics will be:</p>
+<ul>
+<li>x = year</li>
+<li>y = population</li>
+</ul>
+<p>Because I’m interested in the growth rate, I’ll use <code>geom_line</code> and <code>geom_point</code>.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="kw">ggplot</span>(county_pop, <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span> population)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb48-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb48-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb48-4" data-line-number="4"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>county)</a></code></pre></div>
+<p><img src="UNBMBA6693_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p>It looks like Southern Maine grew, while Northern Maine did not. That would be a compelling story to tell on a map, but for this example, since I’m not using a map I’m going to compare the two most southeastern counties (York and Cumberland) to the two most northeastern counties. I’ll still use the same aesthetics and geoms, but I’ll change county from a facet to an aesthetic – color.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="kw">ggplot</span>(county_pop <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb49-2" data-line-number="2"><span class="st">         </span><span class="kw">filter</span>(county <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Aroostook&quot;</span>, <span class="st">&quot;Washington&quot;</span>, <span class="st">&quot;York&quot;</span>, <span class="st">&quot;Cumberland&quot;</span>)), </a>
+<a class="sourceLine" id="cb49-3" data-line-number="3">       <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span> population, <span class="dt">col =</span> county)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb49-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb49-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_point</span>()</a></code></pre></div>
+<p><img src="UNBMBA6693_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p>Finally, we’ll change the breaks on the y-axis to increments of 50,000 and use a red-green colorblind friendly palette. We’ll use the simple <code>scale_color_colorblind()</code> function from package <code>ggthemes</code>. You’ll notice that the color differences aren’t as easy to notice as the default ggplot2 palette. If we wanted more control or options over our colorblind palette, we could use the <code>dichromat</code> package or the colorblind friendly palettes from <a href="http://colorbrewer2.org">colorbrewer.org</a>. Keep in mind that there are also computer tools for colorblind users that automatically transform colors on websites.</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="kw">library</span>(ggthemes)</a>
+<a class="sourceLine" id="cb50-2" data-line-number="2"><span class="kw">ggplot</span>(county_pop <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb50-3" data-line-number="3"><span class="st">         </span><span class="kw">filter</span>(county <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Aroostook&quot;</span>, <span class="st">&quot;Washington&quot;</span>, <span class="st">&quot;York&quot;</span>, <span class="st">&quot;Cumberland&quot;</span>)), </a>
+<a class="sourceLine" id="cb50-4" data-line-number="4">       <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span> population, <span class="dt">col =</span> county)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb50-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb50-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb50-7" data-line-number="7"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">50000</span>, <span class="dv">100000</span>, <span class="dv">150000</span>, <span class="dv">200000</span>, <span class="dv">250000</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb50-8" data-line-number="8"><span class="st">  </span><span class="kw">scale_color_colorblind</span>()</a></code></pre></div>
+<p><img src="UNBMBA6693_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+</div>
+<div id="datacamp-exercises-2" class="section level2">
+<h2><span class="header-section-number">3.9</span> DataCamp Exercises</h2>
+<p>The DataCamp exercises due this unit continue coverage of dplyr and ggplot2. These exercises will complete the DataCamp “Introduction to the Tidyverse” course. DataCamp also provides certificates for these courses and the ability to share your completion on LinkedIn, which is always a good resume-booster.</p>
+</div>
+<div id="credits" class="section level2">
+<h2><span class="header-section-number">3.10</span> Credits</h2>
+<p>Lion photo, <a href="https://www.flickr.com/photos/senzenina/">HeatherBradleyPhotography</a> <img src="img/32px-Cc-by_new.svg.png" alt="by" /><img src="img/32px-Cc-nc.svg.png" alt="nc" /><img src="img/32px-Cc-sa.svg.png" alt="sa" /> Some rights reserved<br />
+(used with author permission)<a href="https://www.csc2.ncsu.edu/faculty/healey/PP/">A partial list of preattentive visual features</a>, Christopher G. Healy<br />
+<a href="http://complexdiagrams.com/wp-content/2012/01/VisualPropertiesTable.pdf">Properties and Best Uses of Visual Encodings</a>, Noah Iliinsky <img src="img/32px-Cc-by_new.svg.png" alt="by" /><img src="img/32px-Cc-sa.svg.png" alt="sa" /> Some rights reserved<br />
+<a href="http://www.color-blindness.com/color-blind-essentials/">Color Blind Essentials</a>, by Colblindor</p>
+</div>
+<div id="datacamp-exercises-3" class="section level2">
+<h2><span class="header-section-number">3.11</span> DataCamp Exercises</h2>
+<p>The DataCamp exercises you are assigned primarily cover <code>dplyr</code> and <code>ggplot2</code> in different ways. This breadth of coverage should help solidify your knowledge of these core packages which we’ll use throughout the semester. Both of these packages will also help clarify your thinking when manipulating data and visualizing it. This will make it easier to work with any data manipulation and visualization tools, including Excel.</p>
+</div>
+<div id="what-is-r" class="section level2">
+<h2><span class="header-section-number">3.12</span> What is R?</h2>
+<p><a href="./book/UNBRProg.pdf" target="_blank">Fun with R</a></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="more-sql.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exploratory-data-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["UNBMBA6693.pdf", "UNBMBA6693.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
