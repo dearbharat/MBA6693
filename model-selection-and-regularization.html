@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>MBA 6693 Data Analytics for Business Decisions</title>
+  <title>Week 8 Model Selection and Regularization | MBA 6693 Data Analytics for Business Decisions</title>
   <meta name="description" content="This book contains all the material and associated instructions for the course MBA 6693 Data Analytics for Business Decisions taught at University of New Brunswick." />
   <meta name="generator" content="bookdown 0.16.5 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="MBA 6693 Data Analytics for Business Decisions" />
+  <meta property="og:title" content="Week 8 Model Selection and Regularization | MBA 6693 Data Analytics for Business Decisions" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="dearbharat/UNBMBA6693" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="MBA 6693 Data Analytics for Business Decisions" />
+  <meta name="twitter:title" content="Week 8 Model Selection and Regularization | MBA 6693 Data Analytics for Business Decisions" />
   
   <meta name="twitter:description" content="This book contains all the material and associated instructions for the course MBA 6693 Data Analytics for Business Decisions taught at University of New Brunswick." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="logit-and-lda.html"/>
 
-<link rel="next" href="getting-started.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -233,326 +233,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">MBA 6693 Data Analytics for Business Decisions</h1>
-<p class="author"><em>Bharat Bhushan Verma</em></p>
-<p class="date"><em>2020-02-25</em></p>
-</div>
-<div id="introduction" class="section level1 unnumbered">
-<h1>Introduction</h1>
-<p>This course focuses on developing skills necessary to perform data analytics processes and manage data lifecycle for business decision making. In this course we follow step by step process of data analytics including data extraction, transformation, analyzing and drawing inferences for business decisions. We will use MySQL for data extraction and preprocessing. We will analyze data using R to apply multivariate statistical learning techniques like Clustering, PCA, ARM and Logit models while also familiarising ourselves with version control using Git, interactive JuPyteR notebooks and RStudio. We will also learn advanced algorithms like Random Forest, kNN and SVM using R.</p>
-<div id="prerequisites" class="section level2 unnumbered">
-<h2>Prerequisites</h2>
-<p>MBA 6606 and MBA 6607 or
-ADM 2623/ADM 2624 and ADM 3628.</p>
-<p>Prior experience in statistics, optimization, databases and possibly some programming is highly desirable.</p>
-<p>Start learning <a href="https://github.com/">GitHub</a> on your own. You can ask doubts on <a href="piazza.com/unb.ca/winter2020/mba6693">Piazza</a></p>
-</div>
-<div id="weekly-meeting-schedule" class="section level2 unnumbered">
-<h2>Weekly Meeting Schedule</h2>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Days</th>
-<th align="left">Time</th>
-<th align="center">Classroom</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Wednesday</td>
-<td align="left">19:00 to 21:50</td>
-<td align="center">SH351</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="course-objectives" class="section level2 unnumbered">
-<h2>Course Objectives</h2>
-<p>Data Analytics is fast becoming a mainstream in business decision making. The objective of this course is to expose students to challenges and tools required in data acquisition from databases, preprocess and transform the data, apply relevant methods for drawing insights and convert the output into meaningful reports and visualizations for decision making. The purpose of data analytics will be to provide better consumer, market and operations insights for enhancing business value and automating business decisions.</p>
-<div id="course-tools" class="section level3 unnumbered">
-<h3>Course Tools</h3>
-<p><strong>This class is supported by <a href="https://www.datacamp.com/enterprise/data-analytics-for-business-decisions">DataCamp</a></strong>, the most intuitive learning platform for data science. Learn R, Python and SQL the way you learn best through a combination of short expert videos and hands-on-the-keyboard exercises. Take over 100+ courses by expert instructors on topics such as importing data, data visualization or machine learning and learn faster through immediate and personalised feedback on every exercise. You will have access to the entire DataCamp course library for free for the duration of this course. I’ll make an announcement in Piazza detailing the effective dates.</p>
-<p><strong><em><a href="piazza.com/unb.ca/winter2020/mba6693">Piazza</a></em></strong> will be used for announcements, discussion, etc.</p>
-<p><strong><a href="https://cran.r-project.org/">R</a></strong> is the analytics tool we will be using.</p>
-<p><strong><a href="https://www.rstudio.com/">RStudio</a></strong> is the Integrated Development Environment (IDE) and the way you will be accessing R.</p>
-<p><strong><a href="https://rpubs.com/">RPubs</a></strong> is where we will be publishing our assignments and project.</p>
-</div>
-</div>
-<div id="preclass-checklist" class="section level2 unnumbered">
-<h2>Preclass checklist</h2>
-<p>By the end of first day of class, you are expected to:</p>
-<ol style="list-style-type: decimal">
-<li><p>Sign up for <a href="piazza.com/unb.ca/winter2020/mba6693">Piazza</a>. Make sure your name accurately reflects what is in UNB system.</p></li>
-<li><p>Accept the invite to DataCamp I emailed to you. I’ll be sending them to your maine.edu accounts the week before classes start and again on the first day of classes. DataCamp is free for the entire semester.</p></li>
-<li><p>Install <a href="https://www.r-project.org/">R</a> and <a href="https://rstudio.com/">RStudio</a> on your computer.</p></li>
-<li><p>After you have completed all the items above, sign up for your free <a href="https://rpubs.com/">RPubs</a> account.</p></li>
-<li><p>Install package manager <a href="https://www.anaconda.com/distribution/#download-section">Anaconda</a>
-which provides support for R kernel in Jupyter Notebooks.</p></li>
-</ol>
-</div>
-<div id="course-material" class="section level2 unnumbered">
-<h2>Course Material</h2>
-<div id="required-material" class="section level3 unnumbered">
-<h3>Required Material</h3>
-<p><a href="./book/FDS.pdf" target="_blank"><img src="img/cover_FDS.png" alt="FDS" /></a>
-<a href="./book/ISL.pdf" target="_blank"><img src="img/cover_ISL.png" alt="ISL" /></a>
-<a href="http://r4ds.had.co.nz/" target="_blank"><img src="img/cover_gwick.png" alt="RGW" /></a></p>
-<p>[FDS] Elmasri Ramez, Navathe Shamkant Fundamentals of Database Systems 7th Edition ISBN: 9780136086208</p>
-<p>[ISL] Trevor Hastie, Robert Tibshirani, Gareth James, Daniela Witten. An Introduction to Statistical Learning with Applications in R, Springer 978-1-4614-7137-0</p>
-<p>[RGW] <a href="http://r4ds.had.co.nz/">R for Data Science</a>, Grolemund and Wickham</p>
-</div>
-<div id="reference-material" class="section level3 unnumbered">
-<h3>Reference Material</h3>
-<p><a href="https://bookdown.org/rdpeng/rprogdatascience/" target="_blank"><img src="img/cover_peng.png" alt="RDS" /></a>
-<a href="https://bookdown.org/ndphillips/YaRrr/" target="_blank"><img src="img/cover_YaRrr.png" alt="YAR" /></a>
-<a href="./book/GIT.pdf" target="_blank"><img src="img/cover_GIT.png" alt="GIT" /></a></p>
-<p>Most of the material will be on this site and in the DataCamp exercises.</p>
-<p>[RDS] <a href="https://bookdown.org/rdpeng/rprogdatascience/">R Programming for Data Science</a>, Peng</p>
-<p>[YAR] <a href="https://bookdown.org/ndphillips/YaRrr/">YaRrr! The Pirate’s Guide to R</a>, Phillips</p>
-<p>[GIT] Scott Chacon, Ben Straub. Pro Git, Second Edition, 978-1-4842-0077-3</p>
-</div>
-<div id="additional-optional-readings" class="section level3 unnumbered">
-<h3>Additional Optional Readings</h3>
-<p><a href="./book/DBB.pdf" target="_blank"><img src="img/cover_DBB.png" alt="DBB" /></a>
-<a href="./book/DSW.pdf" target="_blank"><img src="img/cover_DSW.png" alt="DSW" /></a></p>
-</div>
-</div>
-<div id="schedule" class="section level2 unnumbered">
-<h2>Schedule</h2>
-<p><em>last updated: 2020-02-25</em></p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Week</th>
-<th align="left">Chapter</th>
-<th align="left">Topic</th>
-<th align="left">Items_due</th>
-<th align="left">Due</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Mon, Jan 06</td>
-<td align="left">FDS 4</td>
-<td align="left">Basic SQL</td>
-<td align="left">DC - 1</td>
-<td align="left">Sat, Jan 11</td>
-</tr>
-<tr class="even">
-<td align="left">Mon, Jan 13</td>
-<td align="left">FDS 5</td>
-<td align="left">More SQL</td>
-<td align="left">DC - 2</td>
-<td align="left">Sat, Jan 18</td>
-</tr>
-<tr class="odd">
-<td align="left">Mon, Jan 20</td>
-<td align="left">RGW 3</td>
-<td align="left">Exploratory Data Analysis I</td>
-<td align="left">DC - 3</td>
-<td align="left">Sat, Jan 25</td>
-</tr>
-<tr class="even">
-<td align="left">Mon, Jan 27</td>
-<td align="left">RGW 4</td>
-<td align="left">Exploratory Data Analysis II</td>
-<td align="left">DC - 4</td>
-<td align="left">Sat, Feb 01</td>
-</tr>
-<tr class="odd">
-<td align="left">Mon, Feb 03</td>
-<td align="left">ISL 3</td>
-<td align="left">Multiple Linear Regression</td>
-<td align="left">DC - 5</td>
-<td align="left">Sat, Feb 08</td>
-</tr>
-<tr class="even">
-<td align="left">Mon, Feb 10</td>
-<td align="left">ISL 4</td>
-<td align="left">StatsCan Data Science Competition</td>
-<td align="left">DC - 6</td>
-<td align="left">Sat, Feb 15</td>
-</tr>
-<tr class="odd">
-<td align="left">Mon, Feb 17</td>
-<td align="left">ISL 4</td>
-<td align="left">Classification LDA &amp; Logit</td>
-<td align="left">DC - 7</td>
-<td align="left">Sat, Feb 22</td>
-</tr>
-<tr class="even">
-<td align="left">Mon, Feb 24</td>
-<td align="left">ISL 6</td>
-<td align="left">Model Selection &amp; Regularization</td>
-<td align="left">DC - 8</td>
-<td align="left">Sat, Feb 29</td>
-</tr>
-<tr class="odd">
-<td align="left">Mon, Mar 09</td>
-<td align="left">ISL 10</td>
-<td align="left">PCA and Clustering</td>
-<td align="left">DC - 9</td>
-<td align="left">Sat, Mar 14</td>
-</tr>
-<tr class="even">
-<td align="left">Mon, Mar 16</td>
-<td align="left">ISL 8</td>
-<td align="left">Tree Based Models</td>
-<td align="left">DC - 10</td>
-<td align="left">Sat, Mar 21</td>
-</tr>
-<tr class="odd">
-<td align="left">Mon, Mar 23</td>
-<td align="left">ISL 8</td>
-<td align="left">Random Forest, Bagging &amp; Boosting</td>
-<td align="left">DC - 11</td>
-<td align="left">Sat, Mar 28</td>
-</tr>
-<tr class="even">
-<td align="left">Mon, Mar 30</td>
-<td align="left">ISL 9</td>
-<td align="left">SVM</td>
-<td align="left">DC - 12</td>
-<td align="left">Sat, Apr 04</td>
-</tr>
-<tr class="odd">
-<td align="left">Mon, Apr 06</td>
-<td align="left"></td>
-<td align="left">Course Wrap Up</td>
-<td align="left">NA</td>
-<td align="left">Thu, Apr 09</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="evaluation-components" class="section level2 unnumbered">
-<h2>Evaluation Components</h2>
-<table>
-<caption><span id="tab:evaluation">Table 0.1: </span>Evaluation components and weightages.</caption>
-<thead>
-<tr class="header">
-<th align="left">Evaluation</th>
-<th align="center">Weightage</th>
-<th align="left">Date</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Data Camp (12)</td>
-<td align="center">48</td>
-<td align="left">Check Schedule</td>
-</tr>
-<tr class="even">
-<td align="left">Test 01</td>
-<td align="center">5</td>
-<td align="left">January 28</td>
-</tr>
-<tr class="odd">
-<td align="left">Test 02</td>
-<td align="center">5</td>
-<td align="left">February 25</td>
-</tr>
-<tr class="even">
-<td align="left">Class Participation</td>
-<td align="center">12</td>
-<td align="left">Weekly Submissions</td>
-</tr>
-<tr class="odd">
-<td align="left">Individual Project</td>
-<td align="center">10</td>
-<td align="left">March 10</td>
-</tr>
-<tr class="even">
-<td align="left">Group Project</td>
-<td align="center">20</td>
-<td align="left">March 31</td>
-</tr>
-</tbody>
-</table>
-<p>Note:</p>
-<ol style="list-style-type: decimal">
-<li>DC - Data Camp Exercises</li>
-<li>Class participation @ 1% is given for timely weekly submissions.</li>
-<li>A delay of week is allowed with a penalty of 1% class participation component</li>
-<li>Any submission delayed beyond a week will result in loss of 5% weightage.</li>
-</ol>
-<p>You have an additional bonus component of 5% awarded for class participation. This will be solely judged by your participation on your contributions on Piazza. You must ask at least five questions or answer questions on Piazza to receive full credit. The credit shall be granted at the sole discretion of the instructor.</p>
-</div>
-<div id="grade-determination" class="section level2 unnumbered">
-<h2>Grade Determination</h2>
-<table>
-<caption><span id="tab:grades">Table 0.2: </span>Grade Conversion.</caption>
-<thead>
-<tr class="header">
-<th align="left">Marks</th>
-<th align="left">Grade</th>
-<th align="left">Marks</th>
-<th align="left">Grade</th>
-<th align="left">Marks</th>
-<th align="left">Grade</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">89.51 - 100</td>
-<td align="left">A+</td>
-<td align="left">84.51 - 89.5</td>
-<td align="left">A</td>
-<td align="left">79.51 - 84.5</td>
-<td align="left">A-</td>
-</tr>
-<tr class="even">
-<td align="left">74.51 - 79.5</td>
-<td align="left">B+</td>
-<td align="left">69.51 - 74.5</td>
-<td align="left">B</td>
-<td align="left">64.51 - 69.5</td>
-<td align="left">B-</td>
-</tr>
-<tr class="odd">
-<td align="left">59.51 - 64.5</td>
-<td align="left">C+</td>
-<td align="left">54.51 - 59.5</td>
-<td align="left">C</td>
-<td align="left">49.51 - 54.5</td>
-<td align="left">D</td>
-</tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">0 - 49.5</td>
-<td align="left">F</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="course-guidelines" class="section level2 unnumbered">
-<h2>Course Guidelines</h2>
-<ol style="list-style-type: decimal">
-<li><p>There will be some practice sets released from time to time, which you can submit for feedback, but those will not be graded. However, the questions in assignments will be similar to the assignments. Therefore finishing these assignments independently will not only be very helpful in preparing for all examinations, but also enhance your understanding of the materials.</p></li>
-<li><p>Each quiz will be of twenty (30) minutes duration starting from the beginning of each designated class. There is no final examination but the two term tests will be cover all the material taught until the day of examination.</p></li>
-<li><p>All exams and quizzes are closed books and notes. A formula sheet, exactly the same as the one at the end of this course outline, will be provided by the instructor for all examinations. No self-prepared formula sheet is allowed. The exams may be conducted online in class or through a 24 - 48 hours take home submissions.</p></li>
-<li><p>Students who miss quizzes for whatever reasons will have the weights of the missed quizzes carried on to the term examinations.</p></li>
-<li><p>Questions and problems in all exams will be based on material discussed in the class. It is your responsibility to attend class regularly to get all the information related to the course throughout this term. Please note that attendance is expected and a student is unlikely to complete the course with success if absent. Candidates will turn off cell phones, pagers, blackberries, or other electronic devices for the duration of the class.</p></li>
-<li><p>A special request for rewriting examination may be considered only for term tests but the latest performance will be considered as final performance. So a retake may increase or decrease the marks obtained.</p></li>
-</ol>
-</div>
-<div id="academic-integrity" class="section level2 unnumbered">
-<h2>Academic Integrity</h2>
-<p>The University of New Brunswick places a high value on academic integrity and has a policy on plagiarism, cheating and other academic offences. Plagiarism includes: 1) quoting verbatim or almost verbatim from any source, including all electronic sources, without acknowledgement; 2) adopting someone else’s line of thought, argument, arrangement, or supporting evidence without acknowledgement; 3) submitting someone else’s work, in whatever form, without acknowledgement; and 4) knowingly representing as one’s own work any idea of another.</p>
-<p>Examples of other academic offences include: 1) cheating on exams, tests, assignments or reports; 2) impersonating somebody at a test or exam; 3) obtaining an exam, test or other course materials through theft, collusion, purchase or other improper manner; 4) submitting course work that is identical or substantially similar to work that has been submitted for another course; and 5) more, as set out in the academic regulations found in the Undergraduate Calendar (<a href="https://eservices.unb.ca/calendar/undergraduate/" class="uri">https://eservices.unb.ca/calendar/undergraduate/</a>).</p>
-<p>Penalties for plagiarism and other academic offences range from a minimum of F (zero) in the assignment, exam or test to a maximum of suspension or expulsion from the University, plus a notation of the academic offence on the student’s transcript.</p>
-<p>For more information, please see the Undergraduate Calendar, Section B, Regulation VIII.A (<a href="https://eservices.unb.ca/calendar/undergraduate/display.cgi?tables=regulationsSubLevel1&amp;id=43" class="uri">https://eservices.unb.ca/calendar/undergraduate/display.cgi?tables=regulationsSubLevel1&amp;id=43</a>) or visit: <a href="http://nocheating.unb.ca" class="uri">http://nocheating.unb.ca</a>. It is the student’s responsibility to know the Regulations.</p>
-</div>
-<div id="bharat-bhushan-verma-instructor" class="section level2 unnumbered">
-<h2><a href="https://www.linkedin.com/in/dearbharat/">Bharat Bhushan Verma</a> Instructor</h2>
-<p>I strongly urge you to post your academic queries on Piazza. If you are shy and do not want to reveal your identity while posting your query, you can post anonymously. Similarly, I strongly urge you to answer the question posted by other students so that you can test your own understanding. While doing so you can earn the bonus 5% extra credits. It can make a difference to your getting your scholarship or not. Take full advantage of the Piazza platform to maximize your score.</p>
-<p>I am restricting myself to answer posted queries for eight hours to give enough room for other students to reply to the query.</p>
-<p>I won’t be answering any queries related to the course sent to my email. I will only respond to queries posted on Piazza only.</p>
-<p>You can contact me through email on <a href="mailto:bharat.verma@unb.ca" class="email">bharat.verma@unb.ca</a> for anything that is specific to you or only few of you. You are welcome to meet me in my office 321, Tilley Hall with prior appointment between Monday and Wednesday only.</p>
+<div id="model-selection-and-regularization" class="section level1">
+<h1><span class="header-section-number">Week 8</span> Model Selection and Regularization</h1>
+<p><i>This unit spans <b>Mon, Feb 24, 2020 </b>through <b>Sat, Feb 29, 2020</b>.</i><br />
+<b>At 11:59 PM on Sat, Feb 29, 2020 the following items are due:</b></p>
+<ul>
+<li>Feature Engineering with R or Python</li>
+</ul>
+<p>Model Selection and Regularization</p>
+<div id="media-8" class="section level2">
+<h2><span class="header-section-number">8.1</span> Media</h2>
+<ul>
+<li><p>Reading: <a href="https://www.listendata.com/2015/03/weight-of-evidence-woe-and-information.html" target="&quot;_blank">Weight of Evidence</a></p></li>
+<li><p>Reading: <a href="https://web.stanford.edu/class/stats202/content/lec11-cond.pdf" target="&quot;_blank">Cross Validation Error</a></p></li>
+</ul>
 
 </div>
 </div>
@@ -561,8 +255,8 @@ which provides support for R kernel in Jupyter Notebooks.</p></li>
           </div>
         </div>
       </div>
+<a href="logit-and-lda.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="getting-started.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

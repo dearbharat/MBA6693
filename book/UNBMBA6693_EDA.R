@@ -703,3 +703,418 @@ merged_data$No_Of_30_DPD_12_months %>%
 merged_data$No_Of_30_DPD_12_months %>%
   as.factor() %>%
   summary()
+
+#===================================#
+#   Correlation of DPD Variables    #
+#===================================#
+
+DPD_data_6 <- merged_data[, c(13:15)]
+DPD_data_12 <- merged_data[, c(16:18)]
+
+cor_DPD_6 <- round(cor(DPD_data_6), 2)
+cor_DPD_6
+melted_cor_DPD_6 <- melt(cor_DPD_6)
+
+cor_DPD_12 <- round(cor(DPD_data_12), 2)
+melted_cor_DPD_12 <- melt(cor_DPD_12)
+
+# DPD Correlation heat map for 6 months
+ggplot(melted_cor_DPD_6, aes(x=Var1, y=Var2, fill=value)) +
+  geom_tile() +
+  labs(x="", y="", title="DPD 6 months Heat Map", fill="Value") +
+  theme_minimal() +
+  theme(axis.text.x=element_text(angle=40, hjust=1))
+
+# DPD Correlation heat map for 12 months
+ggplot(melted_cor_DPD_12, aes(x=Var1, y=Var2, fill=value)) +
+  geom_tile() +
+  labs(x="", y="", title="DPD 12 months Heat Map", fill="Value") +
+  theme_minimal() +
+  theme(axis.text.x=element_text(angle=40, hjust=1))
+
+
+#=======================================================#
+#   Average Credit Card utilisation in last 12 months   #
+#=======================================================#
+
+# Checking for NA values
+merged_data$Avg_CC_Utilization_12_months %>%
+  is.na() %>%
+  sum()
+# 1058
+
+merged_data$Avg_CC_Utilization_12_months %>%
+  summary()
+
+# Replacing the NA value with the median
+merged_data$Avg_CC_Utilization_12_months[which(is.na(merged_data$Avg_CC_Utilization_12_months))] <- 15
+
+
+# Checking for outliers
+merged_data$Avg_CC_Utilization_12_months %>%
+  quantile(seq(0, 1, 0.01), na.rm = T)
+
+merged_data$Avg_CC_Utilization_12_months %>%
+  boxplot(border = "#6fa058", outcol = "#ee853f")
+
+merged_data[(which(merged_data$Avg_CC_Utilization_12_months > 103)),] $Avg_CC_Utilization_12_months <- 103
+
+
+
+
+#==========================================#
+#   No of trades opened in last 6 months   #
+#==========================================#
+
+# Checking for NA values
+merged_data$Trades_6_months %>%
+  is.na() %>%
+  sum()
+
+# 1
+
+merged_data$Trades_6_months %>%
+  summary()
+
+# Replacing the NA value with the median
+merged_data$Trades_6_months[which(is.na(merged_data$Trades_6_months))] <- 2
+
+# Checking for outliers
+merged_data$Trades_6_months %>% quantile(seq(0, 1, 0.01), na.rm = T)
+
+merged_data$Trades_6_months %>% boxplot(border = "#6fa058", outcol = "#ee853f")
+
+merged_data[(which(merged_data$Trades_6_months > 6)),] $Trades_6_months <- 6
+
+
+
+#===========================================#
+#   No of trades opened in last 12 months   #
+#===========================================#
+
+# Checking for NA values
+merged_data$Trades_12_months %>%
+  is.na() %>%
+  sum()
+
+# 0
+
+# Checking for outliers
+merged_data$Trades_12_months %>% quantile(seq(0, 1, 0.01), na.rm = T)
+
+merged_data$Trades_12_months %>% boxplot(border = "#6fa058", outcol = "#ee853f")
+
+merged_data[(which(merged_data$Trades_12_months > 19)),] $Trades_12_months <- 19
+
+#===================================#
+#   Correlation of trades opened    #
+#===================================#
+
+trades_opened <- merged_data[, c(20, 21)]
+
+cor_trades_opened <- round(cor(trades_opened), 2)
+melted_cor_trades_opened <- melt(cor_trades_opened)
+
+# DPD Correlation heat map for 6 months
+ggplot(melted_cor_trades_opened, aes(x=Var1, y=Var2, fill=value)) +
+  geom_tile() +
+  labs(x="", y="", title="Trades Opened Heat Map", fill="Value") +
+  theme_minimal() +
+  theme(axis.text.x=element_text(angle=40, hjust=1))
+
+#==============================================#
+#   No of PL trades opened in last 6 months    #
+#==============================================#
+
+# Checking for NA values
+merged_data$PL_Trades_6_months  %>%
+  is.na() %>%
+  sum()
+
+# 0
+
+# Checking for outliers
+merged_data$PL_Trades_6_months  %>% quantile(seq(0, 1, 0.01), na.rm = T)
+
+merged_data$PL_Trades_6_months  %>% boxplot(border = "#6fa058", outcol = "#ee853f")
+
+merged_data[(which(merged_data$PL_Trades_6_months  > 5)),] $PL_Trades_6_months  <- 5
+
+
+
+#===============================================#
+#   No of PL trades opened in last 12 months    #
+#===============================================#
+
+# Checking for NA values
+merged_data$PL_Trades_12_months  %>%
+  is.na() %>%
+  sum()
+
+# 0
+
+# Checking for outliers
+merged_data$PL_Trades_12_months  %>% quantile(seq(0, 1, 0.01), na.rm = T)
+
+merged_data$PL_Trades_12_months  %>% boxplot(border = "#6fa058", outcol = "#ee853f")
+
+merged_data[(which(merged_data$PL_Trades_12_months  > 10)),] $PL_Trades_12_months  <- 10
+
+#===================================#
+#   Correlation of PL trades opened    #
+#===================================#
+
+pl_trades_opened <- merged_data[, c(22, 23)]
+
+cor_pl_trades_opened <- round(cor(pl_trades_opened), 2)
+melted_cor_pl_trades_opened <- melt(cor_pl_trades_opened)
+
+# DPD Correlation heat map for 6 months
+ggplot(melted_cor_pl_trades_opened, aes(x=Var1, y=Var2, fill=value)) +
+  geom_tile() +
+  labs(x="", y="", title="PL Trades Opened Heat Map", fill="Value") +
+  theme_minimal() +
+  theme(axis.text.x=element_text(angle=40, hjust=1))
+
+
+#===============================================================#
+#   No if inquiries in last 6 months excluding home auto loan   #
+#===============================================================#
+
+# Checking for NA values
+merged_data$Inquiries_6_months %>%
+  is.na() %>%
+  sum()
+
+# 0
+
+# Checking for outliers
+merged_data$Inquiries_6_months %>%
+  quantile(seq(0, 1, 0.01), na.rm = T)
+
+merged_data$Inquiries_6_months %>%
+  boxplot(border = "#6fa058", outcol = "#ee853f")
+
+merged_data[(which(merged_data$Inquiries_6_months > 7)),] $Inquiries_6_months <- 7
+
+
+
+#=================================================================#
+#   No if inquiries in last 12 months excluding home auto loan    #
+#=================================================================#
+
+# Checking for NA values
+merged_data$Inquiries_12_months %>%
+  is.na() %>%
+  sum()
+
+# 0
+
+# Checking for outliers
+merged_data$Inquiries_12_months %>%
+  quantile(seq(0, 1, 0.01), na.rm = T)
+
+merged_data$Inquiries_12_months %>%
+  boxplot(border = "#6fa058", outcol = "#ee853f")
+
+merged_data[(which(merged_data$Inquiries_12_months > 12)),] $Inquiries_12_months <- 12
+
+
+
+
+#=================================#
+#   Presence of open home loan    #
+#=================================#
+
+# Checking for NA values
+merged_data$Open_Home_Loan %>%
+  is.na() %>%
+  sum()
+
+# 272
+
+merged_data$Open_Home_Loan %>%
+  as.factor() %>%
+  summary()
+
+merged_data$Open_Home_Loan[which(is.na(merged_data$Open_Home_Loan))] <- 0
+
+# Converting to factor type
+merged_data$Open_Home_Loan <- merged_data$Open_Home_Loan %>%
+  as.factor()
+
+# Plot for  Presence of open home loan
+ggplot(merged_data, aes(x=Open_Home_Loan, y=..count../1000, fill=Open_Home_Loan)) +
+  geom_bar() +
+  scale_fill_manual(values = cp_2) +
+  labs(x="Presence of open home loan ", y="Frequency in 1000s",fill="Presence of open home loan ", title="Frequency of Presence of open home loan ") +
+  theme_minimal()
+
+# Open Home Loan wise Performance Tag Frequency
+merged_data %>%
+  filter(!is.na(Performance_Tag)) %>%
+  ggplot(aes(x=Open_Home_Loan, y=..count../1000, fill=as.factor(Performance_Tag))) +
+  geom_bar(position = "dodge") +
+  theme_minimal()+
+  scale_fill_manual(values = cp_2) +
+  labs(x="Presence of Open Home Loan", y="Frequency in 1000s", fill="Performance Tag", title="Open Home Loan wise Performance Tag Frequency")
+
+
+
+
+#=================================#
+#   Presence of open auto loan    #
+#=================================#
+
+# Checking for NA values
+merged_data$Open_Auto_Loan %>%
+  is.na() %>%
+  sum()
+
+# 0
+
+merged_data$Open_Auto_Loan %>%
+  as.factor() %>%
+  summary()
+
+# Converting to factor type
+merged_data$Open_Auto_Loan <- merged_data$Open_Auto_Loan %>%
+  as.factor()
+
+# Plot for  Presence of open auto loan
+ggplot(merged_data, aes(x=Open_Auto_Loan, y=..count../1000, fill=Open_Auto_Loan)) +
+  geom_bar() +
+  scale_fill_manual(values = cp_2) +
+  labs(x="Presence of open auto loan ", y="Frequency in 1000s",fill="Presence of open auto loan ", title="Frequency of Presence of open auto loan ") +
+  theme_minimal()
+
+# Open Auto Loan wise Performance Tag Frequency
+merged_data %>%
+  filter(!is.na(Performance_Tag)) %>%
+  ggplot(aes(x=Open_Auto_Loan, y=..count../1000, fill=as.factor(Performance_Tag))) +
+  geom_bar(position = "dodge") +
+  theme_minimal()+
+  scale_fill_manual(values = cp_2) +
+  labs(x="Presence of Open Auto Loan", y="Frequency in 1000s", fill="Performance Tag", title="Open Auto Loan wise Performance Tag Frequency")
+
+
+
+
+#=========================#
+#   Outstanding Balance   #
+#=========================#
+
+# Checking for NA values
+merged_data$Outstanding_Balance %>%
+  is.na() %>%
+  sum()
+# 272
+
+merged_data$Outstanding_Balance %>%
+  summary()
+# Median = 774985
+
+merged_data$Outstanding_Balance[which(is.na(merged_data$Outstanding_Balance))] <- 774985
+
+
+# Checking for outliers
+merged_data$Outstanding_Balance %>%
+  quantile(seq(0, 1, 0.01), na.rm = T)
+
+merged_data$Outstanding_Balance %>%
+  boxplot(border = "#6fa058", outcol = "#ee853f")
+
+
+#=========================#
+#   Total no of trades    #
+#=========================#
+
+# Checking for NA values
+merged_data$Total_No_of_trades %>%
+  is.na() %>%
+  sum()
+
+# Checking for outliers
+merged_data$Total_No_of_trades %>%
+  quantile(seq(0, 1, 0.01), na.rm = T)
+
+merged_data$Total_No_of_trades %>%
+  boxplot(border = "#6fa058", outcol = "#ee853f")
+
+merged_data[(which(merged_data$Total_No_of_trades > 20)),] $Total_No_of_trades <- 20
+
+
+
+#=======================#
+#   Information Value   #
+#=======================#
+
+merged_data_2 <- merged_data[which(!is.na(merged_data$Performance_Tag)), -c(1, 30:33)]
+merged_data_2$Performance_Tag <- as.numeric(merged_data_2$Performance_Tag)
+
+IV <- create_infotables(data=merged_data_2, y="Performance_Tag", bins=10, parallel=TRUE)
+IV_Value <- data.frame(IV$Summary)
+
+# Printing the Information Value for each variable
+print(IV$Tables$Age, row.names = F)
+print(IV$Tables$Gender, row.names = F)
+print(IV$Tables$Marital_Status, row.names = F)
+print(IV$Tables$No_Of_Dependents, row.names = F)
+print(IV$Tables$Income, row.names = F)
+print(IV$Tables$Education, row.names = F)
+print(IV$Tables$Profession, row.names = F)
+print(IV$Tables$Type_Of_Residence, row.names = F)
+print(IV$Tables$Months_In_Current_Residence, row.names = F)
+print(IV$Tables$Months_In_Current_Company, row.names = F)
+print(IV$Tables$No_Of_90_DPD_6_months, row.names = F)
+print(IV$Tables$No_Of_60_DPD_6_months, row.names = F)
+print(IV$Tables$No_Of_30_DPD_6_months, row.names = F)
+print(IV$Tables$No_Of_90_DPD_12_months, row.names = F)
+print(IV$Tables$No_Of_60_DPD_12_months, row.names = F)
+print(IV$Tables$No_Of_30_DPD_12_months, row.names = F)
+print(IV$Tables$Avg_CC_Utilization_12_months, row.names = F)
+print(IV$Tables$Trades_6_months, row.names = F)
+print(IV$Tables$Trades_12_months, row.names = F)
+print(IV$Tables$PL_Trades_6_months , row.names = F)
+print(IV$Tables$PL_Trades_12_months , row.names = F)
+print(IV$Tables$Inquiries_6_months, row.names = F)
+print(IV$Tables$Inquiries_12_months, row.names = F)
+print(IV$Tables$Open_Home_Loan, row.names = F)
+print(IV$Tables$Outstanding_Balance, row.names = F)
+print(IV$Tables$Total_No_of_trades, row.names = F)
+print(IV$Tables$Open_Auto_Loan, row.names = F)
+
+# Plot of Information Table
+plot_infotables(IV, "Age") + theme_minimal()
+plot_infotables(IV, "Gender") + theme_minimal()
+plot_infotables(IV, "Marital_Status") + theme_minimal()
+plot_infotables(IV, "No_Of_Dependents") + theme_minimal()
+plot_infotables(IV, "Income") + theme_minimal()
+plot_infotables(IV, "Education") + theme_minimal()
+plot_infotables(IV, "Profession") + theme_minimal()
+plot_infotables(IV, "Type_Of_Residence" ) + theme_minimal() + theme(axis.text.x=element_text(angle=40, hjust=1))
+plot_infotables(IV, "Months_In_Current_Residence") + theme_minimal()
+plot_infotables(IV, "Months_In_Current_Company") + theme_minimal()
+plot_infotables(IV, "No_Of_90_DPD_6_months") + theme_minimal()
+plot_infotables(IV, "No_Of_60_DPD_6_months") + theme_minimal()
+plot_infotables(IV, "No_Of_30_DPD_6_months") + theme_minimal()
+plot_infotables(IV, "No_Of_90_DPD_12_months") + theme_minimal()
+plot_infotables(IV, "No_Of_60_DPD_12_months") + theme_minimal()
+plot_infotables(IV, "No_Of_30_DPD_12_months") + theme_minimal()
+plot_infotables(IV, "Avg_CC_Utilization_12_months") + theme_minimal()
+plot_infotables(IV, "Trades_6_months") + theme_minimal()
+plot_infotables(IV, "Trades_12_months") + theme_minimal()
+plot_infotables(IV, "PL_Trades_6_months") + theme_minimal()
+plot_infotables(IV, "PL_Trades_12_months") + theme_minimal()
+plot_infotables(IV, "Inquiries_6_months") + theme_minimal()
+plot_infotables(IV, "Inquiries_12_months") + theme_minimal()
+plot_infotables(IV, "Open_Home_Loan") + theme_minimal()
+plot_infotables(IV, "Outstanding_Balance") + theme_minimal()+ theme(axis.text.x=element_text(angle=40, hjust=1))
+plot_infotables(IV, "Total_No_of_trades") + theme_minimal()
+plot_infotables(IV, "Open_Auto_Loan") + theme_minimal()
+
+# Checking the Information Value Summary
+IV_Value[order(-IV_Value$IV), ]
+# Hence we can see that demographic data variables has low Information Value
+# as compared to credit data variables
+
